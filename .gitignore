@@ -1,0 +1,14 @@
+.DS_Store
+build/
+dist/
+Vendor/
+release.local.env
+*.p12
+*.p8
+*.pem
+*.key
+__pycache__/
+.env
+.env.*
+*.mobileprovision
+*.provisionprofile

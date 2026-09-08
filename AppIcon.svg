@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="130" y1="80" x2="910" y2="950" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17243B"/><stop offset="1" stop-color="#070B14"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="260" y1="220" x2="760" y2="810" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67F7C2"/><stop offset="1" stop-color="#39AEEF"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="22" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect x="48" y="48" width="928" height="928" rx="220" fill="url(#bg)"/>
+  <rect x="70" y="70" width="884" height="884" rx="200" fill="none" stroke="#FFFFFF" stroke-opacity=".08" stroke-width="5"/>
+  <path d="M302 292h420l-37 454c-5 61-56 108-117 108H456c-61 0-112-47-117-108l-37-454Z" fill="none" stroke="url(#mint)" stroke-width="54" stroke-linejoin="round"/>
+  <path d="M256 292h512M423 292l18-76h142l18 76" fill="none" stroke="url(#mint)" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M445 455v226M579 455v226" stroke="#67F7C2" stroke-width="48" stroke-linecap="round" opacity=".9"/>
+  <path d="m760 152 20 54 54 20-54 20-20 54-20-54-54-20 54-20 20-54Z" fill="#67F7C2" filter="url(#glow)"/>
+</svg>
