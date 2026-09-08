@@ -2,6 +2,10 @@
 # Sourced by the build/release scripts from the project root.
 source ./release.env
 if [[ -f release.local.env ]]; then source ./release.local.env; fi
+case "${RELEASE_MODE:-}" in
+  adhoc|notarized) ;;
+  *) echo "RELEASE_MODE musí být adhoc nebo notarized." >&2; exit 1 ;;
+esac
 [[ "$APP_VERSION" =~ ^[0-9]+([.][0-9]+){0,2}$ ]] || { echo "Neplatná APP_VERSION" >&2; exit 1; }
 [[ "$APP_BUILD" =~ ^[1-9][0-9]*$ ]] || { echo "APP_BUILD musí být rostoucí kladné celé číslo." >&2; exit 1; }
 SPARKLE_DIR="$PWD/Vendor/Sparkle-2.9.6"

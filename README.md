@@ -2,6 +2,8 @@
 
 Zdrojový repozitář: [LubosCzech/Nimbo](https://github.com/LubosCzech/Nimbo). Hlavní větev je `main`; instalační balíčky patří do GitHub Releases, ne do zdrojového Gitu.
 
+Aktuální vydávání používá `RELEASE_MODE=adhoc`: bez Apple certifikátu a notarizace, s povinnými podpisy Sparkle pro archiv i appcast. macOS může při první instalaci požadovat ruční povolení. Pozdější přechod na `notarized` je připravený v [UPDATES.md](UPDATES.md).
+
 ```bash
 git clone https://github.com/LubosCzech/Nimbo.git
 cd Nimbo

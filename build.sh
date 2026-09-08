@@ -3,6 +3,10 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 source scripts/config.sh
+if [[ "${NIMBO_RELEASE_BUILD:-0}" == 1 ]]; then
+  source scripts/release-mode.sh
+  configure_release_signing
+fi
 bash scripts/fetch-sparkle.sh
 
 APP_NAME="Nimbo"

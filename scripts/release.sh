@@ -4,7 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 usage() {
   echo "Použití: bash scripts/release.sh prepare [--first-release] | upload | publish"
-  echo "prepare: universal build, Developer ID, notarizace, DMG a podepsaný appcast"
+  echo "prepare: universal build, DMG a podepsaný appcast (RELEASE_MODE=adhoc|notarized)"
   echo "upload: nahraje ověřené soubory do nového GitHub draftu (vyžaduje existující tag)"
   echo "publish: ověří draft a zveřejní jej jako Latest"
 }
@@ -16,9 +16,24 @@ FIRST=false
 if [[ "$ACTION" == prepare && "${1:-}" == --first-release ]]; then FIRST=true; shift; fi
 [[ $# == 0 ]] || { usage; exit 1; }
 source scripts/config.sh
+source scripts/release-mode.sh
 [[ -n "$UPDATE_FEED_URL" ]] || { echo "Nejprve nastavte repozitář a veřejný EdDSA klíč v release.env." >&2; exit 1; }
-command -v gh >/dev/null || { echo "Nainstalujte GitHub CLI (gh) a spusťte gh auth login." >&2; exit 1; }
-[[ "$(gh api "repos/$GITHUB_REPOSITORY" --jq .private)" == false ]] || { echo "Aktualizace vyžadují veřejný repozitář." >&2; exit 1; }
+if [[ "$ACTION" != prepare ]]; then
+  command -v gh >/dev/null || { echo "Pro upload/publish nainstalujte GitHub CLI (gh) a spusťte gh auth login; prepare přihlášení nepotřebuje." >&2; exit 1; }
+fi
+# Anonymous HTTPS reads also prove that users can access the update repository.
+public_api() { curl --fail --silent --show-error --location --proto '=https' --tlsv1.2 "https://api.github.com/repos/$GITHUB_REPOSITORY$1"; }
+[[ "$(public_api '' | python3 -c 'import json,sys; print(json.load(sys.stdin)["private"])')" == False ]] || { echo "Aktualizace vyžadují veřejný repozitář." >&2; exit 1; }
+has_stable_release() {
+  public_api '/releases/latest' >/dev/null 2>"$WORK/latest-error" && return 0
+  # Only a confirmed 404 is treated as no release, never a connection/API error.
+  local status
+  status="$(curl --silent --show-error --location --proto '=https' --tlsv1.2 -o "$WORK/latest.json" -w '%{http_code}' "https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest")" || return 2
+  [[ "$status" == 404 ]] && return 1
+  [[ "$status" == 200 ]] && return 0
+  echo "Nelze ověřit poslední vydání (HTTP $status)." >&2
+  return 2
+}
 bash scripts/fetch-sparkle.sh
 PUBLIC_KEY="$("$SPARKLE_DIR/bin/generate_keys" --account "$SPARKLE_KEY_ACCOUNT" -p)"
 [[ "$PUBLIC_KEY" == "$SPARKLE_PUBLIC_ED_KEY" ]] || { echo "Podpisový klíč v Klíčence nesouhlasí s release.env." >&2; exit 1; }
@@ -31,7 +46,9 @@ trap 'rm -rf "$WORK"' EXIT
 
 check_previous() {
   if "$FIRST"; then
-    [[ "$(gh release list --repo "$GITHUB_REPOSITORY" --exclude-drafts --exclude-pre-releases --limit 1 --json tagName --jq length)" == 0 ]] || {
+    local result=0
+    has_stable_release || result=$?
+    [[ "$result" == 1 ]] || {
       echo "Repozitář již má stabilní vydání; nepoužívejte --first-release." >&2; exit 1;
     }
   else
@@ -48,45 +65,39 @@ check_previous() {
 
 verify_local() {
   [[ -f "$OUTPUT/.ready" ]] || { echo "Nejprve spusťte prepare." >&2; exit 1; }
+  [[ "$(< "$OUTPUT/release-mode.txt")" == "$RELEASE_MODE" ]] || { echo "Režim připraveného vydání neodpovídá konfiguraci." >&2; exit 1; }
   (cd "$OUTPUT" && shasum -a 256 -c SHA256SUMS)
   "$SPARKLE_DIR/bin/sign_update" --account "$SPARKLE_KEY_ACCOUNT" --verify "$OUTPUT/appcast.xml"
   local signature
   signature="$(python3 scripts/validate-appcast.py "$OUTPUT/appcast.xml" "$OUTPUT/$DMG_NAME" "$APP_BUILD" "$APP_VERSION" "$PREFIX")"
   "$SPARKLE_DIR/bin/sign_update" --account "$SPARKLE_KEY_ACCOUNT" --verify "$OUTPUT/$DMG_NAME" "$signature"
-  xcrun stapler validate "$OUTPUT/$DMG_NAME"
-  codesign --verify --strict "$OUTPUT/$DMG_NAME"
+  verify_release_dmg "$OUTPUT/$DMG_NAME"
 }
 
 case "$ACTION" in
 prepare)
-  [[ "${NIMBO_SIGN_IDENTITY:-}" == 'Developer ID Application:'* ]] || { echo "Nastavte NIMBO_SIGN_IDENTITY na Developer ID Application certifikát." >&2; exit 1; }
-  [[ -n "${NIMBO_NOTARY_PROFILE:-}" ]] || { echo "Nastavte NIMBO_NOTARY_PROFILE (profil notarytool v Klíčence)." >&2; exit 1; }
+  configure_release_signing
   [[ -s RELEASE_NOTES.md ]] || { echo "Vyplňte RELEASE_NOTES.md." >&2; exit 1; }
   [[ ! -e "$OUTPUT" ]] || { echo "$OUTPUT již existuje. Použijte novou verzi nebo neúplný výstup přesuňte." >&2; exit 1; }
   check_previous
-  # Verify the tag exists remotely. It must identify the reviewed source revision.
-  gh api "repos/$GITHUB_REPOSITORY/git/ref/tags/$TAG" >/dev/null
+  # Tag existence is checked by upload (--verify-tag); prepare has no remote writes.
   mkdir -p "$OUTPUT"
-  export NIMBO_SIGN_IDENTITY
-  NIMBO_ARCHS="arm64 x86_64" bash build.sh
-  ditto -c -k --keepParent build/Nimbo.app "$WORK/notarize.zip"
-  xcrun notarytool submit "$WORK/notarize.zip" --keychain-profile "$NIMBO_NOTARY_PROFILE" --wait
-  xcrun stapler staple build/Nimbo.app
-  xcrun stapler validate build/Nimbo.app
-  spctl --assess --type execute --verbose=2 build/Nimbo.app
+  NIMBO_RELEASE_BUILD=1 NIMBO_ARCHS="arm64 x86_64" bash build.sh
+  notarize_release_app build/Nimbo.app "$WORK"
   NIMBO_DMG_DIR="$OUTPUT" bash create-dmg.sh --no-build
-  codesign --force --sign "$NIMBO_SIGN_IDENTITY" --timestamp "$OUTPUT/$DMG_NAME"
-  xcrun notarytool submit "$OUTPUT/$DMG_NAME" --keychain-profile "$NIMBO_NOTARY_PROFILE" --wait
-  xcrun stapler staple "$OUTPUT/$DMG_NAME"
-  hdiutil verify "$OUTPUT/$DMG_NAME"
+  finish_release_dmg "$OUTPUT/$DMG_NAME"
   cp RELEASE_NOTES.md "$OUTPUT/${DMG_NAME%.dmg}.md"
   cp RELEASE_NOTES.md "$OUTPUT/RELEASE_NOTES.md"
+  if [[ "$RELEASE_MODE" == adhoc ]]; then
+    printf '\nToto vydání není podepsané Apple Developer ID ani notarizované. macOS může při první instalaci požadovat ruční povolení. Aktualizace a appcast jsou podepsané klíčem Sparkle.\n' >> "$OUTPUT/${DMG_NAME%.dmg}.md"
+  fi
   # Preserve earlier signed entries (their download URLs continue pointing to old releases).
   if [[ -f "$WORK/previous.xml" ]]; then cp "$WORK/previous.xml" "$OUTPUT/appcast.xml"; fi
   "$SPARKLE_DIR/bin/generate_appcast" --account "$SPARKLE_KEY_ACCOUNT" \
     --download-url-prefix "$PREFIX" --embed-release-notes --maximum-deltas 0 \
     -o "$OUTPUT/appcast.xml" "$OUTPUT"
-  (cd "$OUTPUT" && shasum -a 256 "$DMG_NAME" appcast.xml RELEASE_NOTES.md > SHA256SUMS)
+  printf '%s\n' "$RELEASE_MODE" > "$OUTPUT/release-mode.txt"
+  (cd "$OUTPUT" && shasum -a 256 "$DMG_NAME" appcast.xml RELEASE_NOTES.md release-mode.txt > SHA256SUMS)
   touch "$OUTPUT/.ready"
   verify_local
   echo "✓ Připraveno: $OUTPUT. Další krok: bash scripts/release.sh upload"
@@ -95,19 +106,21 @@ upload)
   verify_local
   gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --draft \
     --title "Nimbo $APP_VERSION" --notes-file "$OUTPUT/RELEASE_NOTES.md" \
-    "$OUTPUT/$DMG_NAME" "$OUTPUT/appcast.xml" "$OUTPUT/SHA256SUMS" "$OUTPUT/RELEASE_NOTES.md"
+    "$OUTPUT/$DMG_NAME" "$OUTPUT/appcast.xml" "$OUTPUT/SHA256SUMS" "$OUTPUT/RELEASE_NOTES.md" "$OUTPUT/release-mode.txt"
   echo "✓ Draft nahrán. Po kontrole: bash scripts/release.sh publish"
   ;;
 publish)
   verify_local
   [[ "$(gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" == true ]] || { echo "Očekáván nepublikovaný draft." >&2; exit 1; }
   gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir "$WORK/download" \
-    --pattern "$DMG_NAME" --pattern appcast.xml --pattern SHA256SUMS --pattern RELEASE_NOTES.md
-  for file in "$DMG_NAME" appcast.xml SHA256SUMS RELEASE_NOTES.md; do
+    --pattern "$DMG_NAME" --pattern appcast.xml --pattern SHA256SUMS --pattern RELEASE_NOTES.md --pattern release-mode.txt
+  for file in "$DMG_NAME" appcast.xml SHA256SUMS RELEASE_NOTES.md release-mode.txt; do
     cmp "$OUTPUT/$file" "$WORK/download/$file"
   done
   # A first release has no previous appcast; otherwise reject publishing an older build.
-  if [[ "$(gh release list --repo "$GITHUB_REPOSITORY" --exclude-drafts --exclude-pre-releases --limit 1 --json tagName --jq length)" != 0 ]]; then check_previous; fi
+  result=0
+  has_stable_release || result=$?
+  if [[ "$result" == 0 ]]; then check_previous; elif [[ "$result" != 1 ]]; then exit 1; fi
   gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease=false --latest
   curl --fail --location --retry 3 --proto '=https' --tlsv1.2 "$UPDATE_FEED_URL" -o "$WORK/published.xml"
   cmp "$OUTPUT/appcast.xml" "$WORK/published.xml"
