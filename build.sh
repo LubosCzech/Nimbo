@@ -50,6 +50,7 @@ cp Assets/nimbo-logo-dark-transparent.png "${RES_DIR}/nimbo-logo-dark.png"
 cp Assets/nimbo-logo-light-transparent.png "${RES_DIR}/nimbo-logo-light.png"
 cp Assets/nimbo-icon-dark-transparent.png "${RES_DIR}/nimbo-icon-dark.png"
 cp Assets/nimbo-icon-light-transparent.png "${RES_DIR}/nimbo-icon-light.png"
+cp Assets/nimbo-landscape-header.png "${RES_DIR}/nimbo-landscape-header.png"
 
 plutil -create xml1 "${APP_DIR}/Contents/Info.plist"
 plutil -insert CFBundleName -string "${APP_NAME}" "${APP_DIR}/Contents/Info.plist"

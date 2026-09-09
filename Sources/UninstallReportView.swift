@@ -7,6 +7,8 @@ struct UninstallReportView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
+            Label("Výsledek odinstalace", systemImage: "exclamationmark.triangle")
+                .font(.subheadline.weight(.medium)).foregroundStyle(CleanerTheme.orange)
             Text(report.appRemoved ? "Aplikace odstraněna, některá data zůstala" : "Aplikaci se nepodařilo přesunout")
                 .font(.title2.bold())
             Text(report.appName).font(.headline)
@@ -50,6 +52,6 @@ struct UninstallReportView: View {
                 Spacer()
                 Button("Zavřít") { dismiss() }.keyboardShortcut(.cancelAction)
             }
-        }.padding(24).frame(width: 650, height: 500)
+        }.padding(28).frame(width: 680, height: 540).tint(CleanerTheme.mint)
     }
 }

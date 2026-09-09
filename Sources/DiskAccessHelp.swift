@@ -61,7 +61,7 @@ private struct DiskAccessHelpContent: View {
             Text(appURL.path).font(.caption2).foregroundStyle(.secondary)
                 .lineLimit(2).truncationMode(.middle).textSelection(.enabled)
             Button("Otevřít Úplný přístup k disku") { DiskAccessHelp.shared.openSettings() }
-                .buttonStyle(.borderedProminent)
+                .nimboPrimaryAction()
             Button("Zobrazit tuto kopii Nimba ve Finderu") {
                 NSWorkspace.shared.activateFileViewerSelecting([appURL])
             }.buttonStyle(.link)

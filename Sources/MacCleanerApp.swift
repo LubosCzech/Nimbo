@@ -4,6 +4,7 @@ import SwiftUI
 struct NimboApp: App {
     @StateObject private var model = AppModel()
     @StateObject private var updates = UpdateService()
+    @StateObject private var permissions = PermissionController()
     @AppStorage("appAppearance") private var appearanceRaw = AppAppearance.system.rawValue
 
     private var appearance: AppAppearance { AppAppearance(rawValue: appearanceRaw) ?? .system }
@@ -12,12 +13,17 @@ struct NimboApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(model)
+                .environmentObject(permissions)
                 .frame(minWidth: 980, minHeight: 650)
                 .preferredColorScheme(appearance.colorScheme)
-                .onAppear { model.startInitialScan() }
+                .onAppear { permissions.start { model.startInitialScan() } }
+                .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in
+                    permissions.refreshAfterActivation()
+                }
         }
-        .windowStyle(.hiddenTitleBar)
-        .windowToolbarStyle(.unifiedCompact)
+        .windowStyle(.titleBar)
+        .windowToolbarStyle(.unified)
+        .defaultSize(width: 1160, height: 780)
         .commands {
             CommandGroup(after: .appInfo) {
                 Button("Zkontrolovat aktualizace…", action: updates.check)
@@ -28,7 +34,8 @@ struct NimboApp: App {
         Settings {
             SettingsView()
                 .environmentObject(updates)
-                .frame(width: 520, height: 600)
+                .environmentObject(permissions)
+                .frame(width: 580, height: 660)
         }
     }
 }

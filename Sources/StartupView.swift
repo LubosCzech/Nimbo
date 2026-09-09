@@ -70,15 +70,13 @@ struct StartupView: View {
     @StateObject private var model = StartupModel()
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 18) {
-            HStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Po spuštění").font(.largeTitle.bold())
-                    Text("Aplikace po přihlášení a služby na pozadí.").foregroundStyle(.secondary)
-                }
-                Spacer()
-                Button("Obnovit", systemImage: "arrow.clockwise") { model.refresh() }.disabled(model.busy)
-            }
+        ScrollView {
+            VStack(alignment: .leading, spacing: 18) {
+            PageHeader(eyebrow: "Přihlášení a pozadí", title: "Po spuštění",
+                       subtitle: "Rozhodněte, co se může spouštět spolu s vaším Macem.",
+                       trailing: AnyView(Button("Obnovit", systemImage: "arrow.clockwise") {
+                           model.refresh()
+                       }.disabled(model.busy)))
             HStack {
                 Button("Načíst přihlašovací aplikace") { model.includeApps = true; model.refresh() }.disabled(model.busy)
                 Button("Přidat aplikaci…") { model.addApp() }.disabled(model.busy)
@@ -89,17 +87,15 @@ struct StartupView: View {
             }
             Text("Přepínače služeb určují povolení spuštění, nikoli to, zda proces právě běží. Služby se mohou spouštět také podle potřeby nebo plánu. Systémové služby a moderní položky na pozadí spravujte v Nastavení macOS.")
                 .font(.caption).foregroundStyle(.secondary)
-            TextField("Hledat název nebo cestu", text: $model.search).textFieldStyle(.roundedBorder)
             if model.busy { ProgressView().controlSize(.small) }
             if let message = model.message {
                 Text(message).font(.caption).textSelection(.enabled).frame(maxWidth: .infinity, alignment: .leading)
             }
-            ScrollView {
-                LazyVStack(spacing: 10) {
+                LazyVStack(spacing: 0) {
                     ForEach(model.items.filter { model.search.isEmpty || $0.name.localizedCaseInsensitiveContains(model.search) || $0.path.localizedCaseInsensitiveContains(model.search) }) { item in
                         HStack(spacing: 12) {
-                            Image(systemName: item.kind == "Aplikace" ? "app" : "gearshape.2")
-                                .font(.title2).foregroundStyle(CleanerTheme.cyan).frame(width: 34)
+                            NimboIconBadge(symbol: item.kind == "Aplikace" ? SidebarSection.applications.icon : "gearshape.2",
+                                           color: SidebarSection.startup.accent, size: 34)
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(item.name).font(.headline).lineLimit(1)
                                 Text(item.kind).font(.caption).foregroundStyle(.secondary)
@@ -108,20 +104,24 @@ struct StartupView: View {
                             Spacer()
                             Button { NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: item.path)]) } label: {
                                 Image(systemName: "folder")
-                            }.buttonStyle(.borderless).help("Zobrazit ve Finderu")
+                            }.buttonStyle(.borderless).help("Zobrazit ve Finderu").accessibilityLabel("Zobrazit ve Finderu")
                             if item.canToggle {
                                 Toggle("Povoleno", isOn: Binding(get: { item.enabled == true }, set: { model.change(item, enabled: $0) }))
                                     .labelsHidden().toggleStyle(.switch).disabled(model.busy)
+                                    .accessibilityLabel("Spouštět \(item.name) po přihlášení")
                                     .help("Povolit při příštím přihlášení")
                             } else {
                                 Label(item.enabled.map { $0 ? "Povoleno" : "Zakázáno" } ?? "Neznámý stav", systemImage: "lock")
                                     .font(.caption).foregroundStyle(.secondary)
                             }
-                        }.padding(16).background(CleanerTheme.panel, in: RoundedRectangle(cornerRadius: 14))
+                        }.padding(18)
+                        Divider().padding(.leading, 64)
                     }
                     if model.items.isEmpty && !model.busy { Text("Žádné položky nebyly načteny.").foregroundStyle(.secondary).padding() }
-                }
-            }
-        }.padding(26).task { model.refresh() }
+                }.background(CleanerTheme.panel, in: RoundedRectangle(cornerRadius: 20))
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+            }.padding(32)
+        }.task { model.refresh() }
+            .searchable(text: $model.search, placement: .toolbar, prompt: "Hledat položku po spuštění")
     }
 }

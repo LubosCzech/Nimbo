@@ -29,6 +29,7 @@ final class AppModel: ObservableObject {
     @Published var expandedCleanupKinds: Set<CleanupKind> = []
     @Published var alertMessage: String?
     @Published var lastCleanedBytes: Int64 = 0
+    @Published private(set) var hasStartedInitialScan = false
 
     var selectedCleanupSize: Int64 {
         cleanupGroups.filter(\.isSelected).reduce(0) { $0 + $1.size }
@@ -49,6 +50,8 @@ final class AppModel: ObservableObject {
     }
 
     func startInitialScan() {
+        guard !hasStartedInitialScan else { return }
+        hasStartedInitialScan = true
         scanCleanup()
         scanApplications()
     }

@@ -14,7 +14,7 @@ struct WebLookupSheet: View {
             HStack(spacing: 12) {
                 Image(systemName: "info.circle.fill")
                     .font(.system(size: 23, weight: .semibold))
-                    .foregroundStyle(Color(red: 0.22, green: 0.70, blue: 0.96))
+                    .foregroundStyle(CleanerTheme.cyan)
                 VStack(alignment: .leading, spacing: 3) {
                     Text(lookup.title).font(.headline).lineLimit(1)
                     Text(lookup.context).font(.caption).foregroundStyle(.secondary).lineLimit(1)
@@ -27,8 +27,7 @@ struct WebLookupSheet: View {
                 }
                 Button("Zavřít") { dismiss() }.keyboardShortcut(.cancelAction)
             }
-            .padding(.horizontal, 16).frame(height: 58)
-            .background(CleanerTheme.sidebar)
+            .padding(.horizontal, 24).padding(.vertical, 20)
 
             Divider()
 
@@ -46,8 +45,7 @@ struct WebLookupSheet: View {
                         .font(.system(size: 10.5)).foregroundStyle(.tertiary)
                 }
             }
-            .padding(.horizontal, 14).frame(height: 44)
-            .background(CleanerTheme.sidebar)
+            .padding(.horizontal, 24).padding(.vertical, 12)
 
             HStack(spacing: 7) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
@@ -56,8 +54,7 @@ struct WebLookupSheet: View {
                 Text("Google relace se pamatuje").font(.system(size: 10, weight: .medium)).foregroundStyle(.tertiary)
                 Image(systemName: "lock.fill").font(.system(size: 9)).foregroundStyle(.tertiary)
             }
-            .padding(.horizontal, 14).frame(height: 34)
-            .background(CleanerTheme.recessed)
+            .padding(.horizontal, 24).padding(.bottom, 12)
 
             if searchMode == .ai {
                 HStack {
@@ -71,12 +68,12 @@ struct WebLookupSheet: View {
                         NSPasteboard.general.clearContents()
                         NSPasteboard.general.setString(lookup.query, forType: .string)
                     }
-                }.padding(12)
+                }.padding(.horizontal, 24).padding(.bottom, 16)
             }
             GoogleResultsView(url: currentURL)
         }
         .frame(minWidth: 720, idealWidth: 820, minHeight: 520, idealHeight: 620)
-        .background(CleanerTheme.background)
+        .tint(CleanerTheme.mint)
     }
 }
 

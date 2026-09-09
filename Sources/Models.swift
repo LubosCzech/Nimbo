@@ -14,14 +14,14 @@ enum SidebarSection: String, CaseIterable, Identifiable {
 
     var icon: String {
         switch self {
-        case .overview: return "square.grid.2x2.fill"
+        case .overview: return "square.grid.2x2"
         case .cleanup: return "sparkles"
-        case .largeFiles: return "externaldrive.fill"
-        case .applications: return "app.dashed"
+        case .largeFiles: return "doc.text.magnifyingglass"
+        case .applications: return "app"
         case .startup: return "power"
-        case .leftovers: return "puzzlepiece.extension.fill"
-        case .development: return "terminal.fill"
-        case .privacy: return "shield.lefthalf.filled"
+        case .leftovers: return "puzzlepiece.extension"
+        case .development: return "terminal"
+        case .privacy: return "checkmark.shield"
         }
     }
 }
@@ -54,10 +54,10 @@ enum CleanupKind: String, CaseIterable, Identifiable, Hashable {
 
     var icon: String {
         switch self {
-        case .caches: return "shippingbox.fill"
-        case .logs: return "doc.text.fill"
-        case .trash: return "trash.fill"
-        case .developer: return "hammer.fill"
+        case .caches: return "shippingbox"
+        case .logs: return "doc.text"
+        case .trash: return "trash"
+        case .developer: return "hammer"
         }
     }
 }
@@ -145,11 +145,11 @@ enum DevelopmentCategory: String, CaseIterable, Identifiable, Hashable {
 
     var icon: String {
         switch self {
-        case .xcode: return "hammer.fill"
-        case .android: return "cpu.fill"
-        case .node: return "shippingbox.fill"
-        case .homebrew: return "mug.fill"
-        case .java: return "cup.and.saucer.fill"
+        case .xcode: return "hammer"
+        case .android: return "cpu"
+        case .node: return "shippingbox"
+        case .homebrew: return "mug"
+        case .java: return "cup.and.saucer"
         }
     }
 }
