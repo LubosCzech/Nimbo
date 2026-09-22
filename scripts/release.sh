@@ -126,8 +126,13 @@ publish)
   # volání neuplatní. Bez samostatného nastavení by latest/download/ ukazovalo
   # dál na předchozí vydání a Sparkle by tuhle verzi nikdy nenabídl.
   gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --latest
-  LATEST_TAG="$(public_api '/releases/latest' | python3 -c 'import json,sys; print(json.load(sys.stdin)["tag_name"])')"
-  [[ "$LATEST_TAG" == "$TAG" ]] || { echo "GitHub neoznačil $TAG jako latest, vrací $LATEST_TAG." >&2; exit 1; }
+  # Příznak se v API neprojeví okamžitě, proto se na něj chvíli čeká.
+  for attempt in $(seq 1 12); do
+    LATEST_TAG="$(public_api '/releases/latest' | python3 -c 'import json,sys; print(json.load(sys.stdin)["tag_name"])')"
+    if [[ "$LATEST_TAG" == "$TAG" ]]; then break; fi
+    [[ "$attempt" != 12 ]] || { echo "GitHub ani po minutě neoznačil $TAG jako latest, vrací $LATEST_TAG." >&2; exit 1; }
+    sleep 5
+  done
   # Adresa latest/download/ zůstává chvíli v cache CDN, proto se na shodu čeká.
   for attempt in $(seq 1 12); do
     curl --fail --silent --location --proto '=https' --tlsv1.2 "$UPDATE_FEED_URL" -o "$WORK/published.xml" || true
