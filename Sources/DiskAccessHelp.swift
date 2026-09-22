@@ -25,6 +25,13 @@ final class DiskAccessHelp {
     func openSettings() {
         NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles")!)
     }
+
+    // Separate from Full Disk Access: App Management is the narrower permission
+    // macOS 13 introduced for modifying other applications, and it is the one
+    // an uninstaller actually needs.
+    func openAppManagement() {
+        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_AppBundles")!)
+    }
 }
 
 private struct DiskAccessHelpView: View {

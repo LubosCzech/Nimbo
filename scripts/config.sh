@@ -8,6 +8,7 @@ case "${RELEASE_MODE:-}" in
 esac
 [[ "$APP_VERSION" =~ ^[0-9]+([.][0-9]+){0,2}$ ]] || { echo "Neplatná APP_VERSION" >&2; exit 1; }
 [[ "$APP_BUILD" =~ ^[1-9][0-9]*$ ]] || { echo "APP_BUILD musí být rostoucí kladné celé číslo." >&2; exit 1; }
+[[ -z "${APPLE_TEAM_ID:-}" || "$APPLE_TEAM_ID" =~ ^[A-Z0-9]{10}$ ]] || { echo "APPLE_TEAM_ID musí mít 10 znaků A-Z0-9." >&2; exit 1; }
 SPARKLE_DIR="$PWD/Vendor/Sparkle-2.9.6"
 UPDATE_FEED_URL=""
 if [[ -n "$GITHUB_REPOSITORY" || -n "$SPARKLE_PUBLIC_ED_KEY" ]]; then

@@ -19,6 +19,8 @@ final class AppModel: ObservableObject {
     @Published var largeFileThreshold: Int64 = 100_000_000
     @Published var removalPlan: AppRemovalPlan?
     @Published var uninstallReport: UninstallReport?
+    @Published var isRetryingViaFinder = false
+    @Published var finderRetryMessage: String?
     @Published var isUninstalling = false
     @Published var webLookup: WebLookup?
     @Published var pendingCleanup = false
@@ -137,22 +139,22 @@ final class AppModel: ObservableObject {
         let bytes = selected.reduce(Int64(0)) { $0 + $1.size }
         isCleaning = true
         Task {
-            let errors = await Task.detached(priority: .userInitiated) {
-                var allErrors: [String] = []
+            let failures = await Task.detached(priority: .userInitiated) {
+                var allFailures: [RemovalFailure] = []
                 for group in selected {
                     if group.kind == .trash {
-                        allErrors += FileScanner.emptyUserTrash(group.urls)
+                        allFailures += FileScanner.emptyUserTrash(group.urls)
                     } else {
-                        allErrors += FileScanner.moveToTrash(group.urls)
+                        allFailures += FileScanner.moveToTrash(group.urls)
                     }
                 }
-                return allErrors
+                return allFailures
             }.value
             isCleaning = false
-            lastCleanedBytes = errors.isEmpty ? bytes : 0
-            alertMessage = errors.isEmpty
+            lastCleanedBytes = failures.isEmpty ? bytes : 0
+            alertMessage = failures.isEmpty
                 ? "Hotovo. Uvolněno \(bytes.fileSizeText)."
-                : "Některé položky se nepodařilo odstranit:\n\(errors.prefix(4).joined(separator: "\n"))"
+                : "Některé položky se nepodařilo odstranit:\n\(failures.alertText())"
             scanCleanup()
         }
     }
@@ -161,12 +163,12 @@ final class AppModel: ObservableObject {
         let selected = largeFiles.filter(\.isSelected)
         let urls = selected.map(\.url)
         Task {
-            let errors = await Task.detached { FileScanner.moveToTrash(urls) }.value
-            if errors.isEmpty {
+            let failures = await Task.detached { FileScanner.moveToTrash(urls) }.value
+            if failures.isEmpty {
                 largeFiles.removeAll { urls.contains($0.url) }
                 alertMessage = "Vybrané soubory byly přesunuty do Koše."
             } else {
-                alertMessage = "Některé soubory se nepodařilo přesunout:\n\(errors.prefix(4).joined(separator: "\n"))"
+                alertMessage = "Některé soubory se nepodařilo přesunout:\n\(failures.alertText())"
             }
         }
     }
@@ -175,12 +177,12 @@ final class AppModel: ObservableObject {
         let selected = orphanedData.filter(\.isSelected)
         let urls = selected.map(\.url)
         Task {
-            let errors = await Task.detached { FileScanner.moveToTrash(urls) }.value
-            if errors.isEmpty {
+            let failures = await Task.detached { FileScanner.moveToTrash(urls) }.value
+            if failures.isEmpty {
                 orphanedData.removeAll { urls.contains($0.url) }
                 alertMessage = "Vybrané zbytky aplikací byly přesunuty do Koše."
             } else {
-                alertMessage = "Některé zbytky se nepodařilo přesunout:\n\(errors.prefix(4).joined(separator: "\n"))"
+                alertMessage = "Některé zbytky se nepodařilo přesunout:\n\(failures.alertText())"
             }
         }
     }
@@ -189,12 +191,12 @@ final class AppModel: ObservableObject {
         let selected = developerArtifacts.filter { $0.isSelected && $0.canRemove }
         let urls = selected.map(\.url)
         Task {
-            let errors = await Task.detached { FileScanner.moveToTrash(urls) }.value
-            if errors.isEmpty {
+            let failures = await Task.detached { FileScanner.moveToTrash(urls) }.value
+            if failures.isEmpty {
                 developerArtifacts.removeAll { urls.contains($0.url) }
                 alertMessage = "Vybraná vývojářská data byla přesunuta do Koše."
             } else {
-                alertMessage = "Některá data se nepodařilo přesunout:\n\(errors.prefix(4).joined(separator: "\n"))"
+                alertMessage = "Některá data se nepodařilo přesunout:\n\(failures.alertText())"
             }
         }
     }
@@ -253,6 +255,37 @@ final class AppModel: ObservableObject {
                 alertMessage = "\(plan.app.name) byla přesunuta do Koše včetně vybraných zbytků."
             } else {
                 uninstallReport = report
+            }
+        }
+    }
+
+    // Nimbo does not elevate itself: Finder performs the authenticated move and
+    // macOS asks the user for administrator credentials directly.
+    func retryViaFinder() {
+        guard let report = uninstallReport, !isRetryingViaFinder else { return }
+        let targets = UninstallService.finderTargets(report)
+        guard !targets.isEmpty else { return }
+        isRetryingViaFinder = true
+        Task {
+            let result = await Task.detached(priority: .userInitiated) {
+                Result { try FinderTrashService.moveToTrash(targets) }
+            }.value
+            isRetryingViaFinder = false
+            switch result {
+            case .failure(let error):
+                finderRetryMessage = error.localizedDescription
+            case .success(let outcome):
+                finderRetryMessage = nil
+                let updated = UninstallService.applying(outcome, to: report)
+                if updated.appRemoved {
+                    applications.removeAll { $0.url == report.appURL }
+                }
+                if updated.failures.isEmpty {
+                    uninstallReport = nil
+                    alertMessage = "\(report.appName) byla přesunuta do Koše včetně vybraných zbytků."
+                } else {
+                    uninstallReport = updated
+                }
             }
         }
     }

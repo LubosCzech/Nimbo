@@ -12,6 +12,18 @@ Aktualizace v menu a Nastavení používají podepsaný appcast i archiv; archiv
 
 Ad-hoc podpis neověřuje vydavatele u Applu. macOS může při první instalaci požadovat ruční povolení v Soukromí a zabezpečení. Nevypínejte globálně Gatekeeper ani plošně nemažte quarantine atributy. Sparkle podpis nenahrazuje kontrolu Applu. Na testovacím Macu ověřte také zachování přístupu k disku a Automatizace po aktualizaci.
 
+## Vydání nové verze
+
+```sh
+bash scripts/new-release.sh 1.7      # testy, tag, sestavení, notarizace, draft
+# vyzkoušet aktualizaci z předchozí verze na ten build
+bash scripts/new-release.sh publish  # teprve teď to uvidí uživatelé
+```
+
+`scripts/new-release.sh` obaluje `release.sh` a hlídá, na co se dá zapomenout: čistá pracovní kopie (tag musí ukazovat na kód, který se opravdu notarizoval), větev main, přihlášené `gh`, poznámky k vydání začínající správnou verzí, všechny testovací sady, zvýšení `APP_BUILD` a odeslání tagu. Publikování zůstává samostatný příkaz schválně — mezi draftem a zveřejněním patří ověření skutečné aktualizace.
+
+Přerušené vydání (spadlá notarizace, výpadek sítě) se dokončí stejným příkazem se stejným číslem verze; hotové kroky se přeskočí. `bash scripts/new-release.sh status` ukáže, kde vydání stojí.
+
 ## Předpoklady
 
 Sestavení vyžaduje macOS, Xcode se SDK 26+ a Python 3 z Command Line Tools. Příprava používá veřejné GitHub API, nevyžaduje přihlášení ani gh. Pro automatické upload/publish potřebujete GitHub CLI přihlášené přes gh auth login. Přihlášení v Safari nebo GitHub Desktop samo nepřihlásí GitHub CLI.
@@ -22,7 +34,7 @@ Klíč je již nastavený. Pro opětovné zobrazení veřejné části:
 bash scripts/init-update-key.sh
 ```
 
-Existující klíč se zachová. Soukromý klíč nikdy neukládejte do projektu ani chatu. Bezpečně jej zálohujte mimo repozitář podle [návodu Sparkle](https://sparkle-project.org/documentation/#eddsa-ed25519-signatures). Bez Apple podpisu nelze spoléhat na obnovu ztraceného klíče rotací přes Developer ID. Neměňte účet klíče, veřejný klíč ani bundle ID local.nimbo.app bez migračního plánu.
+Existující klíč se zachová. Soukromý klíč nikdy neukládejte do projektu ani chatu. Bezpečně jej zálohujte mimo repozitář podle [návodu Sparkle](https://sparkle-project.org/documentation/#eddsa-ed25519-signatures). Bez Apple podpisu nelze spoléhat na obnovu ztraceného klíče rotací přes Developer ID. Neměňte účet klíče ani veřejný klíč. Bundle ID se ve verzi 1.6 změnilo z local.nimbo.app na dev.svtk.nimbo; předvolby přenáší PreferencesMigration. Další změnu bundle ID nedělejte bez obdobného migračního plánu.
 
 ## Příprava vydání
 
@@ -75,7 +87,9 @@ NIMBO_SIGN_IDENTITY="Developer ID Application: Vaše jméno (TEAMID)"
 NIMBO_NOTARY_PROFILE="nimbo-notary"
 ```
 
-4. Zachovejte stejný Sparkle klíč, feed a bundle ID. Zvyšte verzi/build a vydejte novou aplikaci. Přechod ověřte skutečnou aktualizací z ad-hoc verze.
+Team ID patří do veřejného release.env jako APPLE_TEAM_ID; je součástí každého podepsaného buildu, není to tajemství. Vydání se zastaví, pokud certifikát patří jinému týmu — podpis jiným týmem by uživatelům znovu zrušil všechna udělená oprávnění. Kontrola běží dvakrát: nad názvem identity před podepsáním a nad TeamIdentifier ve skutečně podepsaném bundlu.
+
+4. Zachovejte stejný Sparkle klíč a feed. Zvyšte verzi/build a vydejte novou aplikaci. Přechod ověřte skutečnou aktualizací z ad-hoc verze.
 
 Notarizovaný režim podepisuje pomocníky, framework a aplikaci Developer ID s Hardened Runtime. Notarizuje a stapluje aplikaci i DMG. Nimbo.entitlements zachovává Apple Events pro přihlašovací položky; souhlas Automatizace zůstává nutný. Chybějící certifikát/profil nebo neúspěšná notarizace zastaví přípravu, nikdy se tiše nepřejde na ad-hoc.
 

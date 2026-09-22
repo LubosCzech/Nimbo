@@ -9,7 +9,11 @@ configure_release_signing() {
     notarized)
       [[ "${NIMBO_SIGN_IDENTITY:-}" == 'Developer ID Application:'* ]] || { echo "Nastavte Developer ID Application certifikát." >&2; return 1; }
       [[ -n "${NIMBO_NOTARY_PROFILE:-}" ]] || { echo "Nastavte NIMBO_NOTARY_PROFILE." >&2; return 1; }
-      export NIMBO_SIGN_IDENTITY
+      # Signing with a second team would reset every granted permission again.
+      [[ -n "${APPLE_TEAM_ID:-}" ]] || { echo "Nastavte APPLE_TEAM_ID v release.env." >&2; return 1; }
+      [[ "$NIMBO_SIGN_IDENTITY" == *"($APPLE_TEAM_ID)"* ]] || {
+        echo "Certifikát nepatří týmu $APPLE_TEAM_ID: $NIMBO_SIGN_IDENTITY" >&2; return 1; }
+      export NIMBO_SIGN_IDENTITY APPLE_TEAM_ID
       ;;
     *) echo "Neznámý režim vydání." >&2; return 1 ;;
   esac

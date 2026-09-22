@@ -310,24 +310,40 @@ enum FileScanner {
         }
     }
 
-    static func moveToTrash(_ urls: [URL]) -> [String] {
-        var errors: [String] = []
-        for url in urls where FileManager.default.fileExists(atPath: url.path) {
-            do {
-                _ = try FileManager.default.trashItem(at: url, resultingItemURL: nil)
-            } catch {
-                errors.append("\(url.lastPathComponent): \(error.localizedDescription)")
-            }
+    // Failures carry the same classification as the uninstall flow, so the
+    // cleanup sections can tell a privacy denial from an ownership one.
+    static func moveToTrash(_ urls: [URL],
+                            environment: RemovalDiagnostics.Environment = .live) -> [RemovalFailure] {
+        remove(urls, environment: environment) { url in
+            _ = try FileManager.default.trashItem(at: url, resultingItemURL: nil)
         }
-        return errors
     }
 
-    static func emptyUserTrash(_ urls: [URL]) -> [String] {
-        var errors: [String] = []
-        for url in urls where FileManager.default.fileExists(atPath: url.path) {
-            do { try FileManager.default.removeItem(at: url) }
-            catch { errors.append("\(url.lastPathComponent): \(error.localizedDescription)") }
+    static func emptyUserTrash(_ urls: [URL],
+                               environment: RemovalDiagnostics.Environment = .live) -> [RemovalFailure] {
+        remove(urls, environment: environment) { url in
+            try FileManager.default.removeItem(at: url)
         }
-        return errors
+    }
+
+    // An item macOS refuses to even look at must be reported, not skipped:
+    // treating a denied lookup as "already gone" would count a blocked item
+    // as cleaned and hide exactly the failures we are trying to diagnose.
+    static func remove(_ urls: [URL],
+                       environment: RemovalDiagnostics.Environment = .live,
+                       operation: (URL) throws -> Void) -> [RemovalFailure] {
+        var failures: [RemovalFailure] = []
+        for url in urls {
+            switch environment.presence(url) {
+            case .absent:
+                continue
+            case .blocked(let code):
+                failures.append(RemovalFailure(url: url, posixCode: code, environment: environment))
+            case .present:
+                do { try operation(url) }
+                catch { failures.append(RemovalFailure(url: url, error: error, environment: environment)) }
+            }
+        }
+        return failures
     }
 }

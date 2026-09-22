@@ -1,22 +1,20 @@
-# Nimbo 1.5
+# Nimbo 1.6
 
-## Nový vzhled a Liquid Glass
+## Podepsané a notarizované vydání
 
-- Přepracované rozhraní s nativním bočním panelem, nástrojovými lištami a ovládacími prvky Liquid Glass na macOS 26.
-- Nový panoramatický obrázek na hlavní stránce, který se přirozeně rozšiřuje pod levé menu.
-- Sjednocené ikony napříč navigací, přehledem a seznamy položek.
-- Upravené světlé a tmavé barevné schéma, čitelnější obsah a přehlednější nastavení i dialogy.
-- Vyhledávání aplikací a položek po spuštění v nástrojové liště. Lepší rozložení a posouvání obsahu v menších oknech.
-- Na starších podporovaných verzích macOS zůstávají standardní systémové ovládací prvky.
+- Nimbo je nově podepsané Apple Developer ID a ověřené notarizací u Applu. macOS už při první instalaci nepožaduje ruční povolení.
+- Udělená oprávnění nově přežijí aktualizaci. U dřívějších ad-hoc verzí se po každé aktualizaci ztrácela, protože macOS považoval novou verzi za jinou aplikaci.
+- Při aktualizaci z verze 1.5 požádá macOS o oprávnění ještě jednou naposledy, protože se mění podpis aplikace a její identifikátor. Od 1.6 dál už zůstanou zachovaná.
+- Identifikátor aplikace se sjednotil se studiem na dev.svtk.nimbo. Nastavení vzhledu i seznam vypnutých přihlašovacích položek se přenesou automaticky, takže vypnuté položky lze i po aktualizaci obnovit.
 
-## Přístup a oprávnění
+## Srozumitelné odstraňování
 
-- Při spuštění Nimbo automaticky ověří přístup k používaným složkám a stav automatizace System Events.
-- Při omezeném nebo neověřeném přístupu zobrazí upozornění s možností pokračovat s omezením.
-- Podrobná kontrola oprávnění je dostupná z Přehledu, Soukromí i Nastavení, včetně odkazů na nastavení macOS.
-- Chybějící volitelné vývojářské nástroje se nepovažují za chybu oprávnění. Časový limit kontroly brání zablokování rozhraní.
-- Kontrola čtení složek není zárukou úplného přístupu k disku ani oprávnění k odstranění všech položek. Nimbo samo systémová oprávnění nemění.
+- Nimbo nyní rozliší, proč macOS položku odmítl odstranit: chybějící Úplný přístup k disku, vlastnictví jiným uživatelem nebo ochrana systému. U každé příčiny nabídne jen to řešení, které skutečně pomůže; dřív se všechny případy sloučily do jedné obecné rady.
+- Aplikace patřící roota jde dokončit tlačítkem „Dokončit přes Finder“. Ověření správce si vyžádá Finder. Nimbo heslo nevidí a nic nespouští s právy roota.
+- Pokud macOS brání v úpravě jiných aplikací, Nimbo na to upozorní a otevře Správu aplikací v nastavení. Bez tohoto souhlasu odmítne macOS odinstalaci bez ohledu na to, kdo ji provádí.
+- U položky, ke které macOS odepře i pouhé zjištění existence, se dřív operace tiše přeskočila a započítala jako uklizená. Nově je vždy nahlášená.
+- Úklidové sekce hlásí důvod selhání stejně podrobně jako odinstalace, včetně vlastníka, práv a systémových příznaků v technickém detailu.
 
-## Poznámka k tomuto vydání
+## O aplikaci
 
-Verze 1.5 je zatím bez Apple Developer ID a notarizace. Po aktualizaci může macOS požádat o některá oprávnění znovu kvůli změně ad-hoc podpisu. Aktualizační balíček a appcast jsou podepsané klíčem Sparkle.
+- Nové okno „O aplikaci Nimbo“ s verzí sestavení a odkazem na studio svtk.dev.

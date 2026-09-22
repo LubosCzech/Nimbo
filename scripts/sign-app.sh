@@ -16,5 +16,11 @@ else
   codesign --force --sign "$IDENTITY" --options runtime --timestamp "$FRAMEWORK/Versions/B/Updater.app"
   codesign --force --sign "$IDENTITY" --options runtime --timestamp "$FRAMEWORK"
   codesign --force --sign "$IDENTITY" --options runtime --timestamp --entitlements "$ENTITLEMENTS" "$APP_PATH"
+  # The identity string is a label; this reads the team out of the signature.
+  if [[ -n "${APPLE_TEAM_ID:-}" ]]; then
+    SIGNED_TEAM="$(codesign -dv "$APP_PATH" 2>&1 | sed -n 's/^TeamIdentifier=//p')"
+    [[ "$SIGNED_TEAM" == "$APPLE_TEAM_ID" ]] || {
+      echo "Podepsáno týmem '${SIGNED_TEAM:-žádný}', očekáván $APPLE_TEAM_ID." >&2; exit 1; }
+  fi
 fi
 codesign --verify --deep --strict "$APP_PATH"

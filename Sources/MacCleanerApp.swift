@@ -9,6 +9,10 @@ struct NimboApp: App {
 
     private var appearance: AppAppearance { AppAppearance(rawValue: appearanceRaw) ?? .system }
 
+    // Before any stored preference is read: the bundle identifier changed in
+    // 1.6 and settings live in a file named after it.
+    init() { PreferencesMigration.run() }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -25,6 +29,9 @@ struct NimboApp: App {
         .windowToolbarStyle(.unified)
         .defaultSize(width: 1160, height: 780)
         .commands {
+            CommandGroup(replacing: .appInfo) {
+                Button("O aplikaci Nimbo") { AboutWindow.shared.show() }
+            }
             CommandGroup(after: .appInfo) {
                 Button("Zkontrolovat aktualizace…", action: updates.check)
                     .disabled(!updates.canCheck)
