@@ -1,0 +1,48 @@
+# Řetězce, které vypadají jako text, ale překládat se nesmějí.
+# Cesty v souborovém systému — překlad by rozbil vyhledávání souborů.
+Library/Application Support
+Library/Application Support/%@
+Library/Developer/Xcode/iOS DeviceSupport
+Library/Saved Application State
+Library/Saved Application State/%@.savedState
+Application Support
+# Identifikace prohlížeče pro Google; změna mění, co Google vrátí.
+Mozilla/5.0
+# Názvy cizích produktů a nástrojů zůstávají v originále.
+Google AI Mode
+Android SDK Build Tools
+Android SDK Platform
+Android Virtual Device
+Java / JDK
+Node / npm
+Maven repository
+# Názvy složek v cestách — překlad rozbije prohledávání disku.
+Desktop
+Documents
+Downloads
+Movies
+Music
+Pictures
+Applications
+# Klíče v Info.plist a launchd plistech.
+CFBundleDisplayName
+CFBundleName
+CFBundleShortVersionString
+CFBundleVersion
+SUFeedURL
+SUPublicEDKey
+Label
+Disabled
+# Jména barev v asset katalogu a argument osascriptu.
+NimboAccent
+NimboContentBackground
+NimboContentSurface
+JavaScript
+# Vlastní jména produktů a technologií.
+Nimbo
+Xcode
+Android
+Homebrew
+DerivedData
+SDK
+Runtime

@@ -1,0 +1,1254 @@
+{
+  "sourceLanguage": "cs",
+  "strings": {
+    " (nelze načíst)": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "%@ aplikací": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "%@ byla přesunuta do Koše včetně vybraných zbytků.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "%@ · %@ POLOŽEK": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "%@ · %@ položek": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "1. Otevřete nastavení tlačítkem níže.\\n2. Přetáhněte ikonu Nimba do seznamu aplikací.\\n3. Zapněte přepínač a Nimbo znovu spusťte.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "AI režim": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aktualizace": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aktualizace nelze spustit: %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aktualizace zatím nejsou nakonfigurované. Chybí GitHub repozitář nebo veřejný podpisový klíč.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aktualizovat": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Analyzovat": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Analyzuji úložiště…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Analyzátor úložiště": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Analýza disku probíhá lokálně. Pouze po kliknutí na ⓘ se Googlu odešle název a technický kontext položky, nikdy její cesta. Google cookies se uchovají kvůli souhlasu a přihlášení. Kontrola aktualizací se připojuje k GitHubu.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Analýza souborů": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Analýza zůstává na Macu": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aplikace": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aplikace a nástroje": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aplikace i vybrané zbytky se přesunou do Koše.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aplikace již neexistuje: %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aplikace odstraněna, některá data zůstala": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aplikace · verze %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aplikace, velké soubory, cache a logy se nejprve přesouvají do Koše.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aplikace: povolte Nimbu ovládání System Events v Soukromí a zabezpečení → Automatizace.\\n%@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Aplikaci se nepodařilo přesunout": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Archiv": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Archivy aplikací": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Automaticky kontrolovat aktualizace": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Automatizace System Events": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Automatizace byla povolena.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Balíček": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Barevný režim": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Bezpečná údržba Macu. Skenování probíhá lokálně, bez odesílání dat.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Bezpečné čištění": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Cache": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Cache a logy budou přesunuty do Koše. Obsah Koše je jediná nevratná operace.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Cache balíčků Yarn": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Cache simulátorů": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Cache stažených npm balíčků": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Cache, simulátory, SDK, runtime a balíčky na jednom místě.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Celkem %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Chybí Úplný přístup k disku": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Chytrý úklid": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Co zůstalo po odinstalaci": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "DOPORUČENO": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Data aplikace": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Data aplikací": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Data s bundle ID, ke kterému už není nalezena žádná aplikace.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Developer toolbox": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Diagnostické záznamy npm": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Dokončete případný systémový dialog; okno Nimba můžete mezitím zavřít.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Dokončit přes Finder": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Dostupné": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Dočasná data Android nástrojů": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Dočasná data CoreSimulatoru": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Dočasná data a logy Gradle procesů": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Dočasná data, která aplikace znovu vytvoří": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Finder k této položce nic nevrátil.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Finder neodpověděl. Zkuste to znovu, nebo položku přesuňte ručně.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Finder operaci nedokončil.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Finder položku nepřesunul.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Finder si vyžádá heslo správce. Nimbo heslo nevidí a nic nespouští s právy roota.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Globální npm balíček": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Globální úložiště balíčků pnpm": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Google relace se pamatuje": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Gradle cache": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Gradle daemon": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Gradle distribuce": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "HTTP úložiště": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Historické distribuční buildy a dSYM": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Hlavičky pro kompilaci nativních modulů": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Hledat aplikaci": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Hledat položku po spuštění": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Hledám velké soubory…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Hledání souvisejících dat a zbytků odinstalovaných aplikací.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Hledání velkých souborů na Ploše, ve Stažených souborech a dalších osobních složkách.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Hloubková kontrola": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Hotovo": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Hotovo. Uvolněno %@.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Indexy a výsledky sestavení; Xcode je znovu vytvoří": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Kompletní odstranění": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Kontejner": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Kontrola jednou denně. Stažení a instalaci potvrdíte v dialogu Sparkle.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Kontrola překročila časový limit. Dokončete případný systémový dialog a zkuste ji znovu.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Kontrolované složky (%@)": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Kontrolované složky jsou dostupné. Zobrazit podrobnosti.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Kontroluji oprávnění…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Kontroluji…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Kopírovat dotaz": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Koš": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Logy": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Logy instalací a sestavení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Lokální cache Maven závislostí": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Lokálně na Macu": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Mapuji vývojářské nástroje a balíčky…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Mezipaměť": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Mezipaměť aplikací": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Mezipaměť, záznamy a Koš": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Minimální velikost": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Možný zbytek aplikace · %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "NALEZENO %@ POLOŽEK": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nainstalovaná Homebrew formule": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nainstalované Homebrew a globální npm balíčky se pouze zobrazují. Odinstalujte je jejich správcem balíčků.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nainstalované aplikace": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nainstalovaný Homebrew cask": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Najděte prostor k uvolnění": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nalezeno v kategoriích úklidu. Před odstraněním zkontrolujte jejich obsah.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nastavení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nastavení automatizace": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nastavení macOS": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nastavení…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nastavit přístup k disku…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nastavit úplný přístup k disku…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Načtení aplikací. Přesun konkrétní aplikace může později vyžadovat správce.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Načíst přihlašovací aplikace": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Načítám nainstalované aplikace…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Načítání…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nebyly nalezeny žádné související soubory.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Neexistuje": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nelze ověřit": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nenalezeno": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nevybráno": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Neznámý druh položky: %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Neznámý stav": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nezávislé softwarové studio": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nic nenalezeno": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nic se neodstraní bez vašeho potvrzení.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Node.js runtime spravovaný přes nvm": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Některá data se nepodařilo přesunout:\\n%@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Některé funkce mají omezení nebo jejich přístup nelze ověřit. Můžete pokračovat a oprávnění vyřešit později.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Některé položky se nepodařilo odstranit:\\n%@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Některé soubory se nepodařilo přesunout:\\n%@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Některé zbytky se nepodařilo přesunout:\\n%@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "O aplikaci Nimbo": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "OK": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Oblasti vyžadující pozornost: %@. Některé výsledky mohou být neúplné.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Obnovit": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Obnovit aplikace": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Obnovitelné kroky": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Obraz systému Android Emulatoru": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Obsah Koše bude smazán natrvalo. Ostatní vybrané položky se přesunou do Koše.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Odebrat sekci z výběru": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Odepření může způsobit ochrana soukromí i oprávnění souborového systému. Nimbo nic nemění automaticky.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Odinstalace i související data": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Odinstalovat": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Odinstalovat %@?": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Odinstalujte aplikace spolu s jejich cache a nastavením.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Odstranit vývojářská data?": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Offline skenování": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Omezený přístup": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Osobní složky": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Otevře podrobnosti kontroly oprávnění": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Otevřít Správu aplikací": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Otevřít nastavení přístupu k disku": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Otevřít svtk.dev": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Otevřít svtk.dev v prohlížeči": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Otevřít v prohlížeči": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Otevřít Úplný přístup k disku": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Ověřuji složky a stav automatizace.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Po spuštění": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Podle systému": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Podpora iOS zařízení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Pokračovat s omezením": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Pokud Google vrátí běžné výsledky, otevřete AI Mode v prohlížeči.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Pokud přetažení nefunguje, přidejte aplikaci tlačítkem +. Toto okno zůstane viditelné i nad Nastavením systému.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Položka je chráněná integritou systému (SIP) nebo příznakem jen pro čtení. Odstranit ji nelze ani s oprávněním správce; použijte odinstalátor výrobce.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Položka patří jinému uživateli": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Položku chrání systém": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Položku nelze jednoznačně změnit. Použijte Nastavení systému.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Položku vlastní jiný uživatel nebo root a Nimbo na ni nemá právo zápisu. Přesuňte ji do Koše ve Finderu; macOS si sám vyžádá ověření správce.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Položky, které už jsou v Koši": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Porovnávám data s nainstalovanými aplikacemi…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Poslední kontrola: %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Povoleno": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Povolení služby bylo změněno. Projeví se při příštím přihlášení; aktuálně běžící proces pokračuje.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Povolit automatizaci…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Povolit při příštím přihlášení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Povolte Nimbu přístup k disku": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Požadavek na AI • výsledek určuje Google": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Pro prostředí %@ nebyla nalezena žádná známá data.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Procházím bezpečná místa…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Prohledáme Plochu, Dokumenty, Stažené soubory, Filmy, Hudbu a Obrázky.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Prohledáme cache, nastavení, kontejnery, uložené stavy a webová data aplikací.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Prohlédnout výsledky": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Prohlédněte si jednotlivé kategorie a vyberte, co chcete odstranit.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Prostor pro to, na čem záleží.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Prostředí": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Provést úklid?": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Prozkoumat Mac": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Péče o váš Mac": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Před každým odstraněním vidíte velikost i přesný seznam vybraných položek.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Před odstraněním vždy uvidíte potvrzení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přehled": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přepínače služeb určují povolení spuštění, nikoli to, zda proces právě běží. Služby se mohou spouštět také podle potřeby nebo plánu. Systémové služby a moderní položky na pozadí spravujte v Nastavení macOS.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přesunout do Koše": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přesunout do Koše · %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přesunout vybrané soubory do Koše?": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přesunout zbytky do Koše?": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přesunuto do Koše: %@ · Ponecháno: %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přetáhněte do nastavení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přidat aplikaci…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přihlašovací aplikace a služby": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přihlášení a pozadí": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Připraveno k analýze": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Připraveno ke kontrole": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Připraveno ke skenování": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přístup Nimba": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přístup a oprávnění": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Přístup k disku — Nimbo": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Rozhodněte, co se může spouštět spolu s vaším Macem.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "SOUVISEJÍCÍ SOUBORY": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Sdílený agent": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Sekce je prázdná": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Seznam aplikací": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Simulátor": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Skenovat znovu": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Skenuje pouze vaše osobní složky, nikdy systémová data.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Služby po spuštění": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Služby: %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Soubory a složky": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Soubory se standardně přesouvají do Koše. Vyprázdnění Koše je nevratné.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Souhlas ještě nebyl udělen. O systémový dialog požádáte tlačítkem Povolit automatizaci.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Soukromí": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Soukromí a oprávnění": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Související data jsme ponechali beze změny, protože přesun aplikace selhal.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Spouštět %@ po přihlášení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Spouštět po přihlášení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Spravujte původním nástrojem": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Spustit sken": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Starší diagnostické a provozní záznamy": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Stažené archivy a metadata Homebrew": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Stažené verze Gradle": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Stažené závislosti a výsledky sestavení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Světlý": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Symboly dříve připojených verzí iOS": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "System Events neběží, proto stav nelze zjistit. Není to důkaz zamítnutí oprávnění.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "System Events nelze spustit: %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Systémová instalace JDK": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Systémová služba": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Systémové záznamy": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Technický detail": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Tmavý": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Transparentní ochrana": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Typ výsledku": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Uložený stav": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Uživatelská instalace JDK": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Uživatelská služba": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vaše data zůstávají na vašem Macu.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Velké soubory": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Verze %@  ·  %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Verze %@ (%@)": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Volba Podle systému respektuje vzhled macOS. Průhlednost a pohyb se přizpůsobují nastavení zpřístupnění.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Volitelné: potřebné pro čtení a změnu přihlašovacích aplikací, ne pro úklid.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vy rozhodujete": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vybraná vývojářská data byla přesunuta do Koše.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vybrané soubory byly přesunuty do Koše.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vybrané zbytky aplikací byly přesunuty do Koše.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vybrat celou sekci": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vybrat: %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vybráno": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vybráno %@. Cache lze znovu vytvořit, simulátory, runtime a SDK mohou vyžadovat nové stažení.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vybráno %@. Detekce je konzervativní, přesto doporučujeme seznam zkontrolovat.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vybráno %@. Položky bude možné obnovit z Koše.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vyhledat informace na Googlu": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vyčistit %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vzhled": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vzhled a nastavení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Více místa. Méně starostí.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vítejte v Nimbu": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Výsledek odinstalace": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Výsledky": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Výsledky nejsou automaticky vybrané. Některé doplňky mohou používat data bez vlastní aplikace.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vývojářská data": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Vývojářské nástroje": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "WebKit data": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Yarn cache": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Zakázáno": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Zavřít": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Zařízení Apple Simulator": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Zbytky aplikací": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Zkontrolované kategorie": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Zkontrolovat aktualizace…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Zkontrolovat znovu": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Zkuste jiný název nebo obnovte seznam.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Změna pro příští přihlášení byla ověřena.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Změnit vzhled nebo otevřít nastavení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Změnu povolení se nepodařilo ověřit.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Zobrazit tuto kopii Nimba ve Finderu": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Zobrazit ve Finderu": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Zrušit": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "macOS blokuje přístup kvůli ochraně soukromí. Povolte Nimbo v Nastavení systému → Soukromí a zabezpečení → Úplný přístup k disku a spusťte Nimbo znovu. Oprávnění správce tuto ochranu neobchází.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "macOS navíc brání Nimbu v úpravě jiných aplikací, dokud ho nepovolíte v Nastavení systému → Soukromí a zabezpečení → Správa aplikací. Do té doby odmítne i přesun přes Finder.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "macOS nevrátil jednoznačný stav automatizace (kód %@).": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "macOS odepřel automatizaci Finderu. Povolte Nimbo → Finder v Nastavení systému → Soukromí a zabezpečení → Automatizace.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "macOS odepřel automatizaci. Povolte Nimbo → System Events v Nastavení systému → Soukromí a zabezpečení → Automatizace.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "macOS odepřel přístup": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "macOS odepřel přístup a důvod se nepodařilo jednoznačně určit. Technický detail u položky pomůže při hlášení chyby.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "macOS změnu nepotvrdil. Obnovte seznam nebo použijte Nastavení systému.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "práva %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "příznaky %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "vlastník %@:%@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Úklid a Koš": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Úložiště": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Čeká na souhlas": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Čekám na Finder a ověření správce…": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Čtení konfigurací služeb. Systémové služby zůstávají pouze pro čtení.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Čtení mezipaměti, záznamů, Koše a dat Xcode.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Žádné aplikace": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Žádné položky nebyly načteny.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "„Dostupné“ potvrzuje čtení kontrolovaných složek, nikoli úplný přístup k celému disku. Podsložky a přesun konkrétních položek mohou mít další omezení. Chybějící volitelné nástroje nejsou chybou. Nimbo nevyžaduje přístup ke kameře, mikrofonu, obrazovce ani Zpřístupnění.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "… a další (%@)": {
+      "extractionState": "manual",
+      "localizations": {}
+    }
+  },
+  "version": "1.0"
+}
