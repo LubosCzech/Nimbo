@@ -36,7 +36,7 @@ xcrun swiftc \
   -framework SwiftUI -framework AppKit -framework WebKit \
   -F "$SPARKLE_DIR" -framework Sparkle \
   -Xlinker -rpath -Xlinker @executable_path/../Frameworks \
-  -target "${ARCH}-apple-macos14.0" \
+  -target "${ARCH}-apple-macos26.0" \
   -o "build/Nimbo-${ARCH}" \
   Sources/*.swift
 BINARIES+=("build/Nimbo-${ARCH}")
@@ -61,7 +61,7 @@ plutil -insert CFBundleExecutable -string "${APP_NAME}" "${APP_DIR}/Contents/Inf
 plutil -insert CFBundlePackageType -string "APPL" "${APP_DIR}/Contents/Info.plist"
 plutil -insert CFBundleVersion -string "$APP_BUILD" "${APP_DIR}/Contents/Info.plist"
 plutil -insert CFBundleShortVersionString -string "$APP_VERSION" "${APP_DIR}/Contents/Info.plist"
-plutil -insert LSMinimumSystemVersion -string "14.0" "${APP_DIR}/Contents/Info.plist"
+plutil -insert LSMinimumSystemVersion -string "26.0" "${APP_DIR}/Contents/Info.plist"
 plutil -insert LSApplicationCategoryType -string "public.app-category.utilities" "${APP_DIR}/Contents/Info.plist"
 plutil -insert NSHighResolutionCapable -bool YES "${APP_DIR}/Contents/Info.plist"
 plutil -insert NSAppleEventsUsageDescription -string "Nimbo používá System Events k zobrazení a změně aplikací spouštěných po přihlášení a Finder k přesunu položek do Koše s ověřením správce." "${APP_DIR}/Contents/Info.plist"

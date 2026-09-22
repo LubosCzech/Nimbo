@@ -277,7 +277,10 @@ enum FileScanner {
             URL(fileURLWithPath: "/System/Library/CoreServices"),
             home.appendingPathComponent("Applications")
         ]
-        var identifiers = Set<String>()
+        // Nimbo's own data is never a leftover. Seeded rather than discovered,
+        // because the app may run from anywhere and its former identifier has
+        // no bundle left to find.
+        var identifiers = NimboIdentity.all
         for root in roots where fm.fileExists(atPath: root.path) {
             if let rootID = Bundle(url: root)?.bundleIdentifier { identifiers.insert(rootID) }
             guard let enumerator = fm.enumerator(
@@ -304,7 +307,7 @@ enum FileScanner {
         }
     }
 
-    private static func isRelated(_ candidate: String, toAny installedIDs: Set<String>) -> Bool {
+    static func isRelated(_ candidate: String, toAny installedIDs: Set<String>) -> Bool {
         installedIDs.contains { installed in
             candidate == installed || candidate.hasPrefix(installed + ".") || installed.hasPrefix(candidate + ".")
         }

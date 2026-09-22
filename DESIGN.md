@@ -4,7 +4,7 @@
 
 - Navigation uses `NavigationSplitView`, a selectable sidebar `List`, a standard title bar and system toolbar items. Do not paint a custom material over the sidebar or toolbar.
 - Glass is the control layer, not a decoration for each row. Primary actions use native `glassProminent` on macOS 26; secondary row actions keep standard bezels. There are no stacked glass surfaces or simulated blur blobs.
-- Bottom actions use `safeAreaBar` on macOS 26, allowing the system to handle the scroll edge. The macOS 14–25 fallback uses `safeAreaInset` and bordered primary controls.
+- Bottom actions use `safeAreaBar`, allowing the system to handle the scroll edge.
 - Results are opaque, grouped content surfaces. Overview numbers come from actual scans, not a simulated health score. All scan, selection, confirmation, trash and startup-service behavior remains in the existing model/services.
 - Search lives in the system toolbar. Settings use a grouped `Form`. Sheets retain system presentation backgrounds.
 - Appearance is shared through `appAppearance`. Brand colors have explicit light, dark and increased-contrast variants. The cleanup disclosure respects Reduce Motion; native controls handle system accessibility preferences.

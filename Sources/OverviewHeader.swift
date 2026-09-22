@@ -13,7 +13,7 @@ struct OverviewHeader: View {
                                    startPoint: .top, endPoint: .bottom)
                 }
                 .accessibilityHidden(true)
-                .nimboBackgroundExtension()
+                .backgroundExtensionEffect()
                 .overlay(alignment: .bottomLeading) {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Vítejte v Nimbu").font(.subheadline.weight(.medium))
@@ -24,12 +24,5 @@ struct OverviewHeader: View {
                     .foregroundStyle(.white).padding(32)
                 }
         }.frame(height: 300)
-    }
-}
-
-private extension View {
-    @ViewBuilder func nimboBackgroundExtension() -> some View {
-        if #available(macOS 26.0, *) { self.backgroundExtensionEffect() }
-        else { self }
     }
 }

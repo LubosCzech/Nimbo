@@ -32,7 +32,8 @@ swift_suite finder-trash-tests \
   Sources/Models.swift Sources/RemovalDiagnostics.swift Sources/FinderTrashService.swift \
   Sources/UninstallService.swift Tests/FinderTrashTests.swift
 swift_suite preferences-migration-tests \
-  Sources/StartupService.swift Sources/PreferencesMigration.swift Tests/PreferencesMigrationTests.swift
+  Sources/Models.swift Sources/StartupService.swift Sources/PreferencesMigration.swift \
+  Tests/PreferencesMigrationTests.swift
 swift_suite permission-tests \
   Sources/PermissionChecks.swift Sources/PermissionController.swift Tests/PermissionTests.swift
 swift_suite startup-tests Sources/StartupService.swift Tests/StartupTests.swift

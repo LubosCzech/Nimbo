@@ -10,7 +10,7 @@ cd Nimbo
 ./build.sh
 ```
 
-Na macOS 26 používají ovládací prvky nativní Liquid Glass (`glassEffect`); na macOS 14–15 standardní materiál. Build používá aktuálně zvolené Xcode SDK, nikoli pevné SDK 15. Obsahové karty mají čitelné podklady, sklo je vyhrazené ovládání a navigaci.
+Ovládací prvky a navigace používají nativní Liquid Glass; obsahové plochy zůstávají čitelně neprůhledné. Build používá aktuálně zvolené Xcode SDK. Obsahové karty mají čitelné podklady, sklo je vyhrazené ovládání a navigaci.
 
 Transparentní varianty značky jsou v `Assets/*-transparent.png`. Lze je znovu vytvořit z originálů příkazem `xcrun swift PrepareAssets.swift`. Originály zůstávají zachované. Vestavěný Google prohlížeč používá Safari identifikaci, aby Google poskytoval moderní AI rozhraní; k dispozici je také otevření oficiálního AI Mode v systémovém prohlížeči.
 
@@ -51,7 +51,7 @@ chmod +x build.sh
 open "build/Nimbo.app"
 ```
 
-Vyžaduje macOS 14 nebo novější pro běh a Xcode se SDK 26+ pro sestavení Liquid Glass. Kvůli ochraně macOS může být pro skenování některých osobních složek potřeba udělit aplikaci přístup v Nastavení systému → Soukromí a zabezpečení.
+Vyžaduje macOS 26 nebo novější pro běh a Xcode se SDK 26+ pro sestavení. Kvůli ochraně macOS může být pro skenování některých osobních složek potřeba udělit aplikaci přístup v Nastavení systému → Soukromí a zabezpečení.
 
 ## Instalační DMG
 

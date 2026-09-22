@@ -18,7 +18,7 @@ extension UserDefaults: PreferenceStore {}
 /// back. Window frames and Sparkle's own bookkeeping are deliberately left
 /// behind: they belong to the old bundle and are cheap to rebuild.
 enum PreferencesMigration {
-    static let legacyDomain = "local.nimbo.app"
+    static var legacyDomain: String { NimboIdentity.legacyBundleIdentifier }
     static let markerKey = "migratedFromLegacyDomain"
     static let migratedKeys = ["appAppearance", StartupService.savedKey]
 

@@ -1,5 +1,15 @@
 import Foundation
 
+/// Who Nimbo is, for code that must not treat the app's own data as someone
+/// else's. 1.6.1 renamed the bundle, so the former identifier counts too.
+enum NimboIdentity {
+    static let legacyBundleIdentifier = "local.nimbo.app"
+    static var all: Set<String> {
+        Set([Bundle.main.bundleIdentifier, legacyBundleIdentifier].compactMap { $0 })
+    }
+}
+
+
 enum SidebarSection: String, CaseIterable, Identifiable {
     case overview = "Přehled"
     case cleanup = "Chytrý úklid"

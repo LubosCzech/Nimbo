@@ -129,6 +129,13 @@ enum RemovalDiagnosticsTests {
         let thrown = FileScanner.remove([item], environment: present) { _ in throw denied }
         precondition(thrown.count == 1 && thrown[0].obstacle == .privacy)
 
-        print("PASS: privacy/ownership/SIP classification, nounlink parent, directory access, aggregation, denied lookup reported not skipped. No files touched.")
+        // Nimbo must not offer its own data as someone else's leftover. The
+        // bundle identifier changed in 1.6.1, so the former one counts too.
+        precondition(NimboIdentity.all.contains(NimboIdentity.legacyBundleIdentifier))
+        precondition(FileScanner.isRelated(NimboIdentity.legacyBundleIdentifier, toAny: NimboIdentity.all))
+        precondition(FileScanner.isRelated("local.nimbo.app.helper", toAny: NimboIdentity.all))
+        precondition(!FileScanner.isRelated("com.google.Keystone", toAny: NimboIdentity.all))
+
+        print("PASS: privacy/ownership/SIP classification, nounlink parent, directory access, aggregation, denied lookup reported not skipped, own data not offered as a leftover. No files touched.")
     }
 }
