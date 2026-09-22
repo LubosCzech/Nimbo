@@ -1,13 +1,50 @@
 import Foundation
 
+/// What kind of startup entry this is. Behaviour keys off the case, never off
+/// the displayed title: comparing translated text decided, until 1.7, whether a
+/// system daemon could be toggled at all.
+enum StartupKind: String, Codable, Hashable, CaseIterable {
+    case loginItem, userAgent, sharedAgent, systemDaemon
+
+    var title: String {
+        switch self {
+        case .loginItem: return "Aplikace"
+        case .userAgent: return "Uživatelská služba"
+        case .sharedAgent: return "Sdílený agent"
+        case .systemDaemon: return "Systémová služba"
+        }
+    }
+
+    /// Only login items go through System Events.
+    var isLoginItem: Bool { self == .loginItem }
+    /// System daemons stay read-only, whatever the interface language.
+    var isSystemDaemon: Bool { self == .systemDaemon }
+
+    // Versions up to 1.6.1 stored the Czech title. Reading it keeps the saved
+    // list of switched-off items, which cannot be reconstructed from the system.
+    private static let legacyTitles: [String: StartupKind] = [
+        "Aplikace": .loginItem, "Uživatelská služba": .userAgent,
+        "Sdílený agent": .sharedAgent, "Systémová služba": .systemDaemon
+    ]
+
+    init(from decoder: any Decoder) throws {
+        let raw = try decoder.singleValueContainer().decode(String.self)
+        guard let value = StartupKind(rawValue: raw) ?? StartupKind.legacyTitles[raw] else {
+            throw DecodingError.dataCorrupted(.init(codingPath: decoder.codingPath,
+                                                    debugDescription: "Neznámý druh položky: \(raw)"))
+        }
+        self = value
+    }
+}
+
 struct StartupItem: Identifiable, Codable {
     let name: String
     let path: String
     let label: String
-    let kind: String
+    let kind: StartupKind
     var enabled: Bool?
-    var id: String { kind + ":" + path }
-    var canToggle: Bool { kind != "Systémová služba" && enabled != nil && !label.hasPrefix("com.apple.") }
+    var id: String { kind.rawValue + ":" + path }
+    var canToggle: Bool { !kind.isSystemDaemon && enabled != nil && !label.hasPrefix("com.apple.") }
 }
 
 enum StartupService {
@@ -35,7 +72,7 @@ enum StartupService {
     static func loginItems() throws -> [StartupItem] {
         let script = """
         const items = Application('System Events').loginItems();
-        JSON.stringify(items.map(i => ({name:i.name(),path:i.path(),label:'',kind:'Aplikace',enabled:true})));
+        JSON.stringify(items.map(i => ({name:i.name(),path:i.path(),label:'',kind:'loginItem',enabled:true})));
         """
         let text = try command("/usr/bin/osascript", ["-l", "JavaScript", "-e", script])
         let active = try JSONDecoder().decode([StartupItem].self, from: Data(text.utf8))
@@ -94,8 +131,8 @@ enum StartupService {
         let domain = "gui/\(getuid())"
         let overrides = disabledOverrides(try command("/bin/launchctl", ["print-disabled", domain]))
         let systemOverrides = (try? command("/bin/launchctl", ["print-disabled", "system"])).map(disabledOverrides)
-        let roots = [(fm.homeDirectoryForCurrentUser.appendingPathComponent("Library/LaunchAgents").path, "Uživatelská služba"),
-                     ("/Library/LaunchAgents", "Sdílený agent"), ("/Library/LaunchDaemons", "Systémová služba")]
+        let roots = [(fm.homeDirectoryForCurrentUser.appendingPathComponent("Library/LaunchAgents").path, StartupKind.userAgent),
+                     ("/Library/LaunchAgents", StartupKind.sharedAgent), ("/Library/LaunchDaemons", StartupKind.systemDaemon)]
         var items: [StartupItem] = []
         for (root, kind) in roots {
             guard fm.fileExists(atPath: root) else { continue }
@@ -108,7 +145,7 @@ enum StartupService {
                         path: file.path, label: "", kind: kind, enabled: nil))
                     continue
                 }
-                let state = kind == "Systémová služba" ? systemOverrides : overrides
+                let state = kind.isSystemDaemon ? systemOverrides : overrides
                 let enabled = state.map { !($0[label] ?? (plist["Disabled"] as? Bool ?? false)) }
                 items.append(StartupItem(name: label, path: file.path, label: label, kind: kind, enabled: enabled))
             }
@@ -119,7 +156,7 @@ enum StartupService {
     static func setService(_ item: StartupItem, enabled: Bool) throws {
         let current = try services()
         guard let verified = current.first(where: { $0.id == item.id }), verified.canToggle,
-              current.filter({ $0.label == verified.label && $0.kind != "Systémová služba" }).count == 1 else {
+              current.filter({ $0.label == verified.label && !$0.kind.isSystemDaemon }).count == 1 else {
             throw NSError(domain: "Nimbo.Startup", code: 3, userInfo: [NSLocalizedDescriptionKey: "Položku nelze jednoznačně změnit. Použijte Nastavení systému."])
         }
         let domain = "gui/\(getuid())"

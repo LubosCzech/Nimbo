@@ -58,7 +58,7 @@ struct ContentView: View {
             }
         }
         .navigationSplitViewStyle(.balanced)
-        .navigationTitle(model.selectedSection.rawValue)
+        .navigationTitle(model.selectedSection.title)
         .toolbar {
             ToolbarItem(placement: .automatic) {
                 Menu {
@@ -166,7 +166,7 @@ private struct SidebarView: View {
     }
 
     private func navigationRow(_ item: SidebarSection) -> some View {
-        Label(item.rawValue, systemImage: item.icon)
+        Label(item.title, systemImage: item.icon)
             .symbolRenderingMode(.monochrome).symbolVariant(.none)
             .padding(.vertical, 5)
             .tag(item)
@@ -342,12 +342,7 @@ private struct OrphanRow: View {
         }.padding(.horizontal, 17).frame(height: 62)
     }
 
-    private var sourceIcon: String {
-        if item.source == "Cache" { return CleanupKind.caches.icon }
-        if item.source == "Nastavení" { return "slider.horizontal.3" }
-        if item.source == "Kontejner" { return "cube" }
-        return "doc"
-    }
+    private var sourceIcon: String { item.source.icon }
 }
 
 private struct DeveloperDataView: View {
@@ -368,7 +363,7 @@ private struct DeveloperDataView: View {
                 )
                 Picker("Prostředí", selection: $model.selectedDevelopmentCategory) {
                     ForEach(DevelopmentCategory.allCases) { category in
-                        Label(category.rawValue, systemImage: category.icon).tag(category)
+                        Label(category.title, systemImage: category.icon).tag(category)
                     }
                 }.pickerStyle(.segmented)
 

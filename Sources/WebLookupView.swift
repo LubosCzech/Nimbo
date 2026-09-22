@@ -34,7 +34,7 @@ struct WebLookupSheet: View {
             HStack {
                 Picker("Typ výsledku", selection: $searchMode) {
                     ForEach(GoogleSearchMode.allCases) { mode in
-                        Label(mode.rawValue, systemImage: mode.icon).tag(mode)
+                        Label(mode.title, systemImage: mode.icon).tag(mode)
                     }
                 }
                 .pickerStyle(.segmented)

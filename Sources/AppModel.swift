@@ -229,8 +229,8 @@ final class AppModel: ObservableObject {
     func showInfo(for artifact: DeveloperArtifact) {
         webLookup = WebLookup(
             title: artifact.title,
-            query: "\(artifact.title) \(artifact.category.rawValue) \(artifact.kind.rawValue) macOS",
-            context: "\(artifact.category.rawValue) · \(artifact.kind.rawValue) · \(artifact.detail)"
+            query: "\(artifact.title) \(artifact.category.title) \(artifact.kind.title) macOS",
+            context: "\(artifact.category.title) · \(artifact.kind.title) · \(artifact.detail)"
         )
     }
 

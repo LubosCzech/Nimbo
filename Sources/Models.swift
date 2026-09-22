@@ -10,17 +10,25 @@ enum NimboIdentity {
 }
 
 
+// Raw values are identity: they end up in tags, selections and comparisons.
+// Titles are what the user reads, and change with the interface language.
 enum SidebarSection: String, CaseIterable, Identifiable {
-    case overview = "Přehled"
-    case cleanup = "Chytrý úklid"
-    case largeFiles = "Velké soubory"
-    case applications = "Aplikace"
-    case startup = "Po spuštění"
-    case leftovers = "Zbytky aplikací"
-    case development = "Vývojářská data"
-    case privacy = "Soukromí"
+    case overview, cleanup, largeFiles, applications, startup, leftovers, development, privacy
 
     var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .overview: return "Přehled"
+        case .cleanup: return "Chytrý úklid"
+        case .largeFiles: return "Velké soubory"
+        case .applications: return "Aplikace"
+        case .startup: return "Po spuštění"
+        case .leftovers: return "Zbytky aplikací"
+        case .development: return "Vývojářská data"
+        case .privacy: return "Soukromí"
+        }
+    }
 
     var icon: String {
         switch self {
@@ -136,7 +144,7 @@ struct RelatedFile: Identifiable, Hashable {
 struct OrphanedAppData: Identifiable, Hashable {
     let url: URL
     let bundleIdentifier: String
-    let source: String
+    let source: OrphanSource
     let size: Int64
     let modifiedAt: Date
     var isSelected: Bool = false
@@ -145,11 +153,18 @@ struct OrphanedAppData: Identifiable, Hashable {
 }
 
 enum DevelopmentCategory: String, CaseIterable, Identifiable, Hashable {
-    case xcode = "Xcode"
-    case android = "Android"
-    case node = "Node / npm"
-    case homebrew = "Homebrew"
-    case java = "Java / JDK"
+    case xcode, android, node, homebrew, java
+
+    // Product names, so the title is the same in every language.
+    var title: String {
+        switch self {
+        case .xcode: return "Xcode"
+        case .android: return "Android"
+        case .node: return "Node / npm"
+        case .homebrew: return "Homebrew"
+        case .java: return "Java / JDK"
+        }
+    }
 
     var id: String { rawValue }
 
@@ -165,13 +180,19 @@ enum DevelopmentCategory: String, CaseIterable, Identifiable, Hashable {
 }
 
 enum ArtifactKind: String, Hashable {
-    case cache = "Cache"
-    case archive = "Archiv"
-    case simulator = "Simulátor"
-    case sdk = "SDK"
-    case runtime = "Runtime"
-    case package = "Balíček"
-    case logs = "Logy"
+    case cache, archive, simulator, sdk, runtime, package, logs
+
+    var title: String {
+        switch self {
+        case .cache: return "Cache"
+        case .archive: return "Archiv"
+        case .simulator: return "Simulátor"
+        case .sdk: return "SDK"
+        case .runtime: return "Runtime"
+        case .package: return "Balíček"
+        case .logs: return "Logy"
+        }
+    }
 }
 
 struct DeveloperArtifact: Identifiable, Hashable {
@@ -207,10 +228,16 @@ struct WebLookup: Identifiable {
 }
 
 enum GoogleSearchMode: String, CaseIterable, Identifiable {
-    case ai = "AI režim"
-    case standard = "Výsledky"
+    case ai, standard
 
     var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .ai: return "AI režim"
+        case .standard: return "Výsledky"
+        }
+    }
 
     var icon: String {
         switch self {
@@ -223,5 +250,32 @@ enum GoogleSearchMode: String, CaseIterable, Identifiable {
 extension Int64 {
     var fileSizeText: String {
         ByteCountFormatter.string(fromByteCount: self, countStyle: .file)
+    }
+}
+
+/// Where a leftover was found. The icon lives here rather than being chosen by
+/// comparing the displayed text, which stopped working in any other language.
+enum OrphanSource: String, CaseIterable, Hashable {
+    case applicationSupport, caches, preferences, savedState, container, httpStorage, webKit
+
+    var title: String {
+        switch self {
+        case .applicationSupport: return "Data aplikace"
+        case .caches: return "Mezipaměť"
+        case .preferences: return "Nastavení"
+        case .savedState: return "Uložený stav"
+        case .container: return "Kontejner"
+        case .httpStorage: return "HTTP úložiště"
+        case .webKit: return "WebKit data"
+        }
+    }
+
+    var icon: String {
+        switch self {
+        case .caches: return CleanupKind.caches.icon
+        case .preferences: return "slider.horizontal.3"
+        case .container: return "cube"
+        default: return "doc"
+        }
     }
 }

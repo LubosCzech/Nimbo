@@ -35,7 +35,7 @@ final class StartupModel: ObservableObject {
         Task {
             let errorMessage = await Task.detached { () -> String? in
                 do {
-                    if item.kind == "Aplikace" { try StartupService.setLogin(item, enabled: enabled) }
+                    if item.kind.isLoginItem { try StartupService.setLogin(item, enabled: enabled) }
                     else { try StartupService.setService(item, enabled: enabled) }
                     return nil
                 } catch { return error.localizedDescription }
@@ -45,7 +45,7 @@ final class StartupModel: ObservableObject {
                 var updated = item; updated.enabled = enabled
                 if let index = items.firstIndex(where: { $0.id == item.id }) { items[index] = updated }
                 else { items.insert(updated, at: 0) }
-                message = item.kind == "Aplikace" ? "Změna pro příští přihlášení byla ověřena." : "Povolení služby bylo změněno. Projeví se při příštím přihlášení; aktuálně běžící proces pokračuje."
+                message = item.kind.isLoginItem ? "Změna pro příští přihlášení byla ověřena." : "Povolení služby bylo změněno. Projeví se při příštím přihlášení; aktuálně běžící proces pokračuje."
             }
             busy = false
         }
@@ -62,7 +62,7 @@ final class StartupModel: ObservableObject {
         guard panel.runModal() == .OK, let url = panel.url else { return }
         includeApps = true
         change(StartupItem(name: url.deletingPathExtension().lastPathComponent, path: url.path,
-                           label: "", kind: "Aplikace", enabled: false), enabled: true)
+                           label: "", kind: .loginItem, enabled: false), enabled: true)
     }
 }
 
@@ -94,11 +94,11 @@ struct StartupView: View {
                 LazyVStack(spacing: 0) {
                     ForEach(model.items.filter { model.search.isEmpty || $0.name.localizedCaseInsensitiveContains(model.search) || $0.path.localizedCaseInsensitiveContains(model.search) }) { item in
                         HStack(spacing: 12) {
-                            NimboIconBadge(symbol: item.kind == "Aplikace" ? SidebarSection.applications.icon : "gearshape.2",
+                            NimboIconBadge(symbol: item.kind.isLoginItem ? SidebarSection.applications.icon : "gearshape.2",
                                            color: SidebarSection.startup.accent, size: 34)
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(item.name).font(.headline).lineLimit(1)
-                                Text(item.kind).font(.caption).foregroundStyle(.secondary)
+                                Text(item.kind.title).font(.caption).foregroundStyle(.secondary)
                                 Text(item.path).font(.caption2).foregroundStyle(.secondary).lineLimit(1).help(item.path)
                             }
                             Spacer()

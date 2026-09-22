@@ -146,14 +146,14 @@ enum FileScanner {
         let fm = FileManager.default
         let home = fm.homeDirectoryForCurrentUser
         let installedIDs = installedBundleIdentifiers()
-        let locations: [(String, URL, String)] = [
-            ("Application Support", home.appendingPathComponent("Library/Application Support"), ""),
-            ("Cache", home.appendingPathComponent("Library/Caches"), ""),
-            ("Nastavení", home.appendingPathComponent("Library/Preferences"), ".plist"),
-            ("Uložený stav", home.appendingPathComponent("Library/Saved Application State"), ".savedState"),
-            ("Kontejner", home.appendingPathComponent("Library/Containers"), ""),
-            ("HTTP úložiště", home.appendingPathComponent("Library/HTTPStorages"), ""),
-            ("WebKit data", home.appendingPathComponent("Library/WebKit"), "")
+        let locations: [(OrphanSource, URL, String)] = [
+            (.applicationSupport, home.appendingPathComponent("Library/Application Support"), ""),
+            (.caches, home.appendingPathComponent("Library/Caches"), ""),
+            (.preferences, home.appendingPathComponent("Library/Preferences"), ".plist"),
+            (.savedState, home.appendingPathComponent("Library/Saved Application State"), ".savedState"),
+            (.container, home.appendingPathComponent("Library/Containers"), ""),
+            (.httpStorage, home.appendingPathComponent("Library/HTTPStorages"), ""),
+            (.webKit, home.appendingPathComponent("Library/WebKit"), "")
         ]
         var seen = Set<String>()
         var results: [OrphanedAppData] = []
