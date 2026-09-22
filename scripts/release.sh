@@ -121,8 +121,20 @@ publish)
   result=0
   has_stable_release || result=$?
   if [[ "$result" == 0 ]]; then check_previous; elif [[ "$result" != 1 ]]; then exit 1; fi
-  gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease=false --latest
-  curl --fail --location --retry 3 --proto '=https' --tlsv1.2 "$UPDATE_FEED_URL" -o "$WORK/published.xml"
+  gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --draft=false --prerelease=false
+  # GitHub drží příznak "latest" odděleně a při zrušení draftu jej v témže
+  # volání neuplatní. Bez samostatného nastavení by latest/download/ ukazovalo
+  # dál na předchozí vydání a Sparkle by tuhle verzi nikdy nenabídl.
+  gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --latest
+  LATEST_TAG="$(public_api '/releases/latest' | python3 -c 'import json,sys; print(json.load(sys.stdin)["tag_name"])')"
+  [[ "$LATEST_TAG" == "$TAG" ]] || { echo "GitHub neoznačil $TAG jako latest, vrací $LATEST_TAG." >&2; exit 1; }
+  # Adresa latest/download/ zůstává chvíli v cache CDN, proto se na shodu čeká.
+  for attempt in $(seq 1 12); do
+    curl --fail --silent --location --proto '=https' --tlsv1.2 "$UPDATE_FEED_URL" -o "$WORK/published.xml" || true
+    if cmp -s "$OUTPUT/appcast.xml" "$WORK/published.xml"; then break; fi
+    [[ "$attempt" != 12 ]] || { echo "Zveřejněný appcast se ani po třech minutách neshoduje s podepsaným." >&2; exit 1; }
+    sleep 15
+  done
   cmp "$OUTPUT/appcast.xml" "$WORK/published.xml"
   echo "✓ Zveřejněno a ověřeno: https://github.com/$GITHUB_REPOSITORY/releases/tag/$TAG"
   ;;
