@@ -16,6 +16,15 @@ def main() -> int:
     catalog = json.loads(CATALOG.read_text())
     strings = catalog["strings"]
     incoming = json.load(sys.stdin)
+    # Dva tvary: {"jazyk": {"klíč": "text"}} nebo {"klíč": {"jazyk": "text"}}.
+    # Druhý je úspornější, protože se klíč nemusí opakovat u každého jazyka.
+    languages = {"en", "de", "fr", "hi", "es", "cs"}
+    if incoming and not set(incoming).issubset(languages):
+        flipped: dict[str, dict] = {}
+        for key, byLanguage in incoming.items():
+            for lang, value in byLanguage.items():
+                flipped.setdefault(lang, {})[key] = value
+        incoming = flipped
     unknown, written = [], 0
     for lang, entries in incoming.items():
         for key, value in entries.items():
