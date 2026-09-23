@@ -4,6 +4,7 @@ extension SidebarSection {
     var accent: Color {
         switch self {
         case .overview, .cleanup, .startup, .privacy: return CleanerTheme.mint
+        case .performance: return CleanerTheme.cyan
         case .largeFiles, .development: return CleanerTheme.cyan
         case .applications: return CleanerTheme.violet
         case .leftovers: return CleanerTheme.orange

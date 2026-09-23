@@ -13,13 +13,14 @@ enum NimboIdentity {
 // Raw values are identity: they end up in tags, selections and comparisons.
 // Titles are what the user reads, and change with the interface language.
 enum SidebarSection: String, CaseIterable, Identifiable {
-    case overview, cleanup, largeFiles, applications, startup, leftovers, development, privacy
+    case overview, performance, cleanup, largeFiles, applications, startup, leftovers, development, privacy
 
     var id: String { rawValue }
 
     var title: String {
         switch self {
         case .overview: return "Přehled"
+        case .performance: return "Výkon"
         case .cleanup: return "Chytrý úklid"
         case .largeFiles: return "Velké soubory"
         case .applications: return "Aplikace"
@@ -33,6 +34,7 @@ enum SidebarSection: String, CaseIterable, Identifiable {
     var icon: String {
         switch self {
         case .overview: return "square.grid.2x2"
+        case .performance: return "speedometer"
         case .cleanup: return "sparkles"
         case .largeFiles: return "doc.text.magnifyingglass"
         case .applications: return "app"

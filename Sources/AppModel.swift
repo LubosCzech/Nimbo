@@ -18,6 +18,9 @@ final class AppModel: ObservableObject {
     @Published var isCleaning = false
     @Published var largeFileThreshold: Int64 = 100_000_000
     @Published var removalPlan: AppRemovalPlan?
+    @Published var performanceReadings: [PerformanceReading] = []
+    @Published var performanceProcesses: [ProcessUsage] = []
+    @Published var isMeasuringPerformance = false
     @Published var uninstallReport: UninstallReport?
     @Published var isRetryingViaFinder = false
     @Published var finderRetryMessage: String?
@@ -287,6 +290,23 @@ final class AppModel: ObservableObject {
                     uninstallReport = updated
                 }
             }
+        }
+    }
+
+    /// Měří se na vyžádání: průběžné čtení statistik by výkon samo ubíralo.
+    func measurePerformance() {
+        guard !isMeasuringPerformance else { return }
+        isMeasuringPerformance = true
+        Task {
+            let startupCount = await Task.detached(priority: .utility) {
+                (try? StartupService.services().count) ?? 0
+            }.value
+            let snapshot = await Task.detached(priority: .utility) {
+                PerformanceProbe.snapshot(startupItemCount: startupCount)
+            }.value
+            performanceReadings = PerformanceReport.readings(for: snapshot)
+            performanceProcesses = snapshot.processes
+            isMeasuringPerformance = false
         }
     }
 

@@ -46,6 +46,7 @@ struct ContentView: View {
                 Group {
                     switch model.selectedSection {
                     case .overview: OverviewView()
+                    case .performance: PerformanceView()
                     case .cleanup: CleanupView()
                     case .largeFiles: LargeFilesView()
                     case .applications: ApplicationsView()
@@ -134,6 +135,7 @@ private struct SidebarView: View {
         List(selection: selection) {
             Section {
                 navigationRow(.overview)
+                navigationRow(.performance)
             }
             Section("Úložiště") {
                 navigationRow(.cleanup)
