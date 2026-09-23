@@ -83,6 +83,5 @@ final class SupportService: ObservableObject {
 }
 
 enum SupportLink {
-    // TODO: doplnit skutečnou adresu profilu.
-    static let page = URL(string: "https://buymeacoffee.com/svtk")!
+    static let page = URL(string: "https://buymeacoffee.com/svtkdev")!
 }

@@ -72,6 +72,12 @@ enum SupportTests {
             precondition(!service.isPrompting, "po podpoře už nikdy")
         }
 
-        print("PASS: prompt after a week then monthly, calendar months, clock changes, acknowledgement is final. No user preferences touched.")
+        // Adresa se ověřuje offline: že je to https a ten správný profil.
+        // Překlep v odkazu na podporu by se jinak projevil až u uživatele.
+        precondition(SupportLink.page.scheme == "https")
+        precondition(SupportLink.page.host() == "buymeacoffee.com")
+        precondition(SupportLink.page.path() == "/svtkdev")
+
+        print("PASS: prompt after a week then monthly, calendar months, clock changes, acknowledgement is final, donation link points where it should. No user preferences touched.")
     }
 }
