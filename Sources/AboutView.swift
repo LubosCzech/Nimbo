@@ -85,12 +85,19 @@ private struct AboutContent: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
-            Link(destination: Self.studioURL) {
-                Label("Otevřít svtk.dev", systemImage: "safari")
+            HStack(spacing: 10) {
+                Link(destination: Self.studioURL) {
+                    Label("Otevřít svtk.dev", systemImage: "safari")
+                }
+                .nimboPrimaryAction()
+                .accessibilityLabel("Otevřít svtk.dev v prohlížeči")
+
+                Link(destination: SupportLink.page) {
+                    Label("Kávu pro vývojáře", systemImage: "cup.and.saucer")
+                }
+                .accessibilityLabel("Podpořit vývoj Nimba")
             }
-            .nimboPrimaryAction()
             .padding(.top, 16)
-            .accessibilityLabel("Otevřít svtk.dev v prohlížeči")
 
             Spacer(minLength: 12)
 

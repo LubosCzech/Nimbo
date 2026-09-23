@@ -37,6 +37,7 @@ swift_suite preferences-migration-tests \
 swift_suite permission-tests \
   Sources/PermissionChecks.swift Sources/PermissionController.swift Tests/PermissionTests.swift
 swift_suite startup-tests Sources/StartupService.swift Tests/StartupTests.swift
+swift_suite support-tests Sources/SupportService.swift Tests/SupportTests.swift
 # Verifies SF Symbols exist on THIS macOS runtime, so it belongs to a release.
 swift_suite design-tests Sources/Models.swift Tests/DesignTests.swift
 
