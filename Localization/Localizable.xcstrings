@@ -5,23 +5,30 @@
       "extractionState": "manual",
       "localizations": {}
     },
-    "%@ aplikací": {
-      "extractionState": "manual",
-      "localizations": {}
-    },
     "%@ byla přesunuta do Koše včetně vybraných zbytků.": {
       "extractionState": "manual",
       "localizations": {}
     },
-    "%@ dní": {
+    "%@ · %lld POLOŽEK": {
       "extractionState": "manual",
       "localizations": {}
     },
-    "%@ · %@ POLOŽEK": {
+    "%@ · %lld položek": {
       "extractionState": "manual",
       "localizations": {}
     },
-    "%@ · %@ položek": {
+    "%lld aplikací": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld applications"
+          }
+        }
+      }
+    },
+    "%lld dní": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -171,7 +178,14 @@
     },
     "Celkem %@": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total %@"
+          }
+        }
+      }
     },
     "Chybí Úplný přístup k disku": {
       "extractionState": "manual",
@@ -361,7 +375,7 @@
       "extractionState": "manual",
       "localizations": {}
     },
-    "Kontrolované složky (%@)": {
+    "Kontrolované složky (%lld)": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -445,7 +459,7 @@
       "extractionState": "manual",
       "localizations": {}
     },
-    "NALEZENO %@ POLOŽEK": {
+    "NALEZENO %lld POLOŽEK": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -475,7 +489,14 @@
     },
     "Nalezeno v kategoriích úklidu. Před odstraněním zkontrolujte jejich obsah.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found across cleanup categories. Check the contents before removing."
+          }
+        }
+      }
     },
     "Nastavení": {
       "extractionState": "manual",
@@ -605,7 +626,7 @@
       "extractionState": "manual",
       "localizations": {}
     },
-    "Oblasti vyžadující pozornost: %@. Některé výsledky mohou být neúplné.": {
+    "Oblasti vyžadující pozornost: %lld. Některé výsledky mohou být neúplné.": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -717,7 +738,7 @@
       "extractionState": "manual",
       "localizations": {}
     },
-    "PID %@": {
+    "PID %d": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -900,7 +921,7 @@
       "extractionState": "manual",
       "localizations": {}
     },
-    "Přesunuto do Koše: %@ · Ponecháno: %@": {
+    "Přesunuto do Koše: %lld · Ponecháno: %lld": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -1323,7 +1344,7 @@
       "extractionState": "manual",
       "localizations": {}
     },
-    "macOS nevrátil jednoznačný stav automatizace (kód %@).": {
+    "macOS nevrátil jednoznačný stav automatizace (kód %d).": {
       "extractionState": "manual",
       "localizations": {}
     },

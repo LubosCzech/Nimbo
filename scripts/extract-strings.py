@@ -39,6 +39,24 @@ def is_ui_string(value: str) -> bool:
         return False
     return all(ch.isalpha() or ch in " ·:()%@?!,.…&/-+" for ch in value)
 
+# Jaký zástupný znak Swift pro daný typ vygeneruje. Zjištěno přes Mirror nad
+# String.LocalizationValue, ne odhadem: klíč "%@ aplikací" se za běhu neshodne
+# s "%lld aplikací" a řetězec tiše zůstane český.
+SPECIFIERS = [
+    (r"\.pid\b|^status$|^posixCode$", "%d"),        # Int32
+    (r"^getuid\(\)$", "%u"),                         # uid_t
+    (r"^Int\(|\.count\b|Count\b|^days$", "%lld"),   # Int
+]
+
+
+def specifier(expression: str) -> str:
+    text = expression.strip()
+    for pattern, value in SPECIFIERS:
+        if re.search(pattern, text):
+            return value
+    return "%@"
+
+
 def scan_strings(source: str):
     """Vrátí řetězcové literály včetně čísla řádku.
 
@@ -84,7 +102,7 @@ def scan_strings(source: str):
                         elif not inner:
                             depth += (c == "(") - (c == ")")
                         j += 1
-                    parts.append("%@")
+                    parts.append(specifier(source[i + 2:j - 1]))
                     i = j
                     continue
                 parts.append(source[i:i + 2])
@@ -132,7 +150,11 @@ def main() -> int:
         entry = strings.setdefault(key, {})
         entry.setdefault("extractionState", "manual")
         entry.setdefault("localizations", {})
+    # Klíče, které ve zdroji nejsou, se odstraní: zdrojem pravdy je kód.
+    # Jinak by se v katalogu hromadily mrtvé záznamy a překladatel by je plnil.
     stale = [k for k in strings if k not in found]
+    for key in stale:
+        del strings[key]
 
     CATALOG.write_text(json.dumps(catalog, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
     missing = {lang: sum(1 for k in found if lang not in strings[k]["localizations"]) for lang in LANGUAGES}
