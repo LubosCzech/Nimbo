@@ -61,7 +61,7 @@ enum FinderTrashService {
               let response = try? JSONDecoder().decode(Response.self, from: data) else {
             throw NSError(domain: "Nimbo.FinderTrash", code: 1, userInfo: [
                 NSLocalizedDescriptionKey: trimmed.isEmpty
-                    ? "Finder neodpověděl. Zkuste to znovu, nebo položku přesuňte ručně."
+                    ? String(localized: "Finder neodpověděl. Zkuste to znovu, nebo položku přesuňte ručně.")
                     : trimmed
             ])
         }
@@ -74,7 +74,7 @@ enum FinderTrashService {
         let answered = Set(outcome.moved + outcome.failed.map(\.url))
         // Anything Finder did not mention stays a failure: silence is not success.
         outcome.failed += requested.filter { !answered.contains($0) }.map {
-            FinderTrashFailure(url: $0, message: "Finder k této položce nic nevrátil.")
+            FinderTrashFailure(url: $0, message: String(localized: "Finder k této položce nic nevrátil."))
         }
         return outcome
     }
@@ -95,7 +95,7 @@ enum FinderTrashService {
         guard process.terminationStatus == 0 else {
             throw NSError(domain: "Nimbo.FinderTrash", code: Int(process.terminationStatus), userInfo: [
                 NSLocalizedDescriptionKey: text.contains("-1743")
-                    ? "macOS odepřel automatizaci Finderu. Povolte Nimbo → Finder v Nastavení systému → Soukromí a zabezpečení → Automatizace."
+                    ? String(localized: "macOS odepřel automatizaci Finderu. Povolte Nimbo → Finder v Nastavení systému → Soukromí a zabezpečení → Automatizace.")
                     : (text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
                         ? "Finder operaci nedokončil." : text)
             ])

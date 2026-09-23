@@ -17,7 +17,7 @@ final class UpdateService: ObservableObject {
               let url = URL(string: feed), url.scheme == "https", url.host != nil,
               let key = info["SUPublicEDKey"] as? String,
               Data(base64Encoded: key)?.count == 32 else {
-            configurationMessage = "Aktualizace zatím nejsou nakonfigurované. Chybí GitHub repozitář nebo veřejný podpisový klíč."
+            configurationMessage = String(localized: "Aktualizace zatím nejsou nakonfigurované. Chybí GitHub repozitář nebo veřejný podpisový klíč.")
             return
         }
         let updater = controller.updater
@@ -27,7 +27,7 @@ final class UpdateService: ObservableObject {
         do { try updater.start() }
         catch {
             canCheck = false
-            configurationMessage = "Aktualizace nelze spustit: \(error.localizedDescription)"
+            configurationMessage = String(localized: "Aktualizace nelze spustit: \(error.localizedDescription)")
         }
     }
 
@@ -42,20 +42,20 @@ struct UpdateSettingsView: View {
     @EnvironmentObject private var updates: UpdateService
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Label("Aktualizace", systemImage: "arrow.triangle.2.circlepath").font(.headline)
+            Label(String(localized: "Aktualizace"), systemImage: "arrow.triangle.2.circlepath").font(.headline)
             if let message = updates.configurationMessage {
                 Text(message).font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
             } else {
-                Toggle("Automaticky kontrolovat aktualizace", isOn: Binding(
+                Toggle(String(localized: "Automaticky kontrolovat aktualizace"), isOn: Binding(
                     get: { updates.automaticChecks }, set: updates.setAutomaticChecks))
-                Text("Kontrola jednou denně. Stažení a instalaci potvrdíte v dialogu Sparkle.")
+                Text(String(localized: "Kontrola jednou denně. Stažení a instalaci potvrdíte v dialogu Sparkle."))
                     .font(.caption).foregroundStyle(.secondary)
                 if let date = updates.lastCheck {
-                    Text("Poslední kontrola: \(date.formatted(date: .abbreviated, time: .shortened))")
+                    Text(String(localized: "Poslední kontrola: \(date.formatted(date: .abbreviated, time: .shortened))"))
                         .font(.caption).foregroundStyle(.secondary)
                 }
             }
-            Button("Zkontrolovat aktualizace…", action: updates.check).disabled(!updates.canCheck)
+            Button(String(localized: "Zkontrolovat aktualizace…"), action: updates.check).disabled(!updates.canCheck)
         }
     }
 }

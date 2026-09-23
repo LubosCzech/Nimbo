@@ -28,11 +28,11 @@ enum PerformanceTopic: String, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .freeSpace: return "Volné místo"
-        case .swap: return "Odkládací soubor"
-        case .freeMemory: return "Volná paměť"
-        case .startupItems: return "Položky po spuštění"
-        case .uptime: return "Doba běhu"
+        case .freeSpace: return String(localized: "Volné místo")
+        case .swap: return String(localized: "Odkládací soubor")
+        case .freeMemory: return String(localized: "Volná paměť")
+        case .startupItems: return String(localized: "Položky po spuštění")
+        case .uptime: return String(localized: "Doba běhu")
         }
     }
 
@@ -86,32 +86,32 @@ enum PerformanceReport {
                 state: freeRatio < PerformanceThresholds.lowFreeSpaceRatio ? .attention : .good,
                 value: "\(s.freeCapacity.fileSizeText) (\(Int((freeRatio * 100).rounded())) %)",
                 detail: freeRatio < PerformanceThresholds.lowFreeSpaceRatio
-                    ? "Pod desetinou volného místa si macOS hůř poradí s odkládáním i snímky disku."
-                    : "Místa je dost. Nízké volné místo je nejčastější skutečná příčina zpomalení."),
+                    ? String(localized: "Pod desetinou volného místa si macOS hůř poradí s odkládáním i snímky disku.")
+                    : String(localized: "Místa je dost. Nízké volné místo je nejčastější skutečná příčina zpomalení.")),
             PerformanceReading(
                 topic: .swap,
                 state: s.swapUsed > PerformanceThresholds.highSwapUsed ? .attention : .good,
                 value: s.swapUsed.fileSizeText,
                 detail: s.swapUsed > PerformanceThresholds.highSwapUsed
-                    ? "Část paměti se odkládá na disk. Pomůže zavřít aplikace, které jí drží nejvíc."
-                    : "Odkládá se málo, paměť stačí."),
+                    ? String(localized: "Část paměti se odkládá na disk. Pomůže zavřít aplikace, které jí drží nejvíc.")
+                    : String(localized: "Odkládá se málo, paměť stačí.")),
             PerformanceReading(
                 topic: .freeMemory,
                 state: s.freeMemoryRatio < PerformanceThresholds.lowFreeMemoryRatio ? .attention : .good,
                 value: "\(Int((s.freeMemoryRatio * 100).rounded())) %",
-                detail: "Obsazená paměť sama o sobě není problém: macOS v ní drží data, aby je nemusel číst z disku."),
+                detail: String(localized: "Obsazená paměť sama o sobě není problém: macOS v ní drží data, aby je nemusel číst z disku.")),
             PerformanceReading(
                 topic: .startupItems,
                 state: s.startupItemCount > PerformanceThresholds.manyStartupItems ? .attention : .good,
                 value: "\(s.startupItemCount)",
-                detail: "Co startuje s Macem, zpomaluje ho po celou dobu běhu. Tohle bývá největší rozdíl."),
+                detail: String(localized: "Co startuje s Macem, zpomaluje ho po celou dobu běhu. Tohle bývá největší rozdíl.")),
             PerformanceReading(
                 topic: .uptime,
                 state: s.uptime > PerformanceThresholds.longUptime ? .attention : .good,
-                value: days == 0 ? "Méně než den" : "\(days) dní",
+                value: days == 0 ? "Méně než den" : String(localized: "\(days) dní"),
                 detail: s.uptime > PerformanceThresholds.longUptime
-                    ? "Po delším běhu se vyplatí Mac restartovat."
-                    : "Mac běží krátce.")
+                    ? String(localized: "Po delším běhu se vyplatí Mac restartovat.")
+                    : String(localized: "Mac běží krátce."))
         ]
     }
 

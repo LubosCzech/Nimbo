@@ -8,10 +8,10 @@ enum StartupKind: String, Codable, Hashable, CaseIterable {
 
     var title: String {
         switch self {
-        case .loginItem: return "Aplikace"
-        case .userAgent: return "Uživatelská služba"
-        case .sharedAgent: return "Sdílený agent"
-        case .systemDaemon: return "Systémová služba"
+        case .loginItem: return String(localized: "Aplikace")
+        case .userAgent: return String(localized: "Uživatelská služba")
+        case .sharedAgent: return String(localized: "Sdílený agent")
+        case .systemDaemon: return String(localized: "Systémová služba")
         }
     }
 
@@ -31,7 +31,7 @@ enum StartupKind: String, Codable, Hashable, CaseIterable {
         let raw = try decoder.singleValueContainer().decode(String.self)
         guard let value = StartupKind(rawValue: raw) ?? StartupKind.legacyTitles[raw] else {
             throw DecodingError.dataCorrupted(.init(codingPath: decoder.codingPath,
-                                                    debugDescription: "Neznámý druh položky: \(raw)"))
+                                                    debugDescription: String(localized: "Neznámý druh položky: \(raw)")))
         }
         self = value
     }
@@ -99,7 +99,7 @@ enum StartupService {
         }
         """
         if enabled && !FileManager.default.fileExists(atPath: item.path) {
-            throw NSError(domain: "Nimbo.Startup", code: 1, userInfo: [NSLocalizedDescriptionKey: "Aplikace již neexistuje: \(item.path)"])
+            throw NSError(domain: "Nimbo.Startup", code: 1, userInfo: [NSLocalizedDescriptionKey: String(localized: "Aplikace již neexistuje: \(item.path)")])
         }
         // Save the restore target before removal, so interrupted operations remain reversible.
         var saved = savedApps().filter { $0.path != item.path }
@@ -109,7 +109,7 @@ enum StartupService {
         UserDefaults.standard.set(try JSONEncoder().encode(saved), forKey: savedKey)
         let actual = try loginItems().first { $0.path == item.path }?.enabled ?? false
         guard actual == enabled else {
-            throw NSError(domain: "Nimbo.Startup", code: 2, userInfo: [NSLocalizedDescriptionKey: "macOS změnu nepotvrdil. Obnovte seznam nebo použijte Nastavení systému."])
+            throw NSError(domain: "Nimbo.Startup", code: 2, userInfo: [NSLocalizedDescriptionKey: String(localized: "macOS změnu nepotvrdil. Obnovte seznam nebo použijte Nastavení systému.")])
         }
     }
 
@@ -141,7 +141,7 @@ enum StartupService {
                 guard let data = try? Data(contentsOf: file),
                       let plist = (try? PropertyListSerialization.propertyList(from: data, format: nil)) as? [String: Any],
                       let label = plist["Label"] as? String else {
-                    items.append(StartupItem(name: file.deletingPathExtension().lastPathComponent + " (nelze načíst)",
+                    items.append(StartupItem(name: file.deletingPathExtension().lastPathComponent + String(localized: " (nelze načíst)"),
                         path: file.path, label: "", kind: kind, enabled: nil))
                     continue
                 }
@@ -157,13 +157,13 @@ enum StartupService {
         let current = try services()
         guard let verified = current.first(where: { $0.id == item.id }), verified.canToggle,
               current.filter({ $0.label == verified.label && !$0.kind.isSystemDaemon }).count == 1 else {
-            throw NSError(domain: "Nimbo.Startup", code: 3, userInfo: [NSLocalizedDescriptionKey: "Položku nelze jednoznačně změnit. Použijte Nastavení systému."])
+            throw NSError(domain: "Nimbo.Startup", code: 3, userInfo: [NSLocalizedDescriptionKey: String(localized: "Položku nelze jednoznačně změnit. Použijte Nastavení systému.")])
         }
         let domain = "gui/\(getuid())"
         _ = try command("/bin/launchctl", [enabled ? "enable" : "disable", "\(domain)/\(verified.label)"])
         let state = disabledOverrides(try command("/bin/launchctl", ["print-disabled", domain]))
         guard state[verified.label] == !enabled else {
-            throw NSError(domain: "Nimbo.Startup", code: 4, userInfo: [NSLocalizedDescriptionKey: "Změnu povolení se nepodařilo ověřit."])
+            throw NSError(domain: "Nimbo.Startup", code: 4, userInfo: [NSLocalizedDescriptionKey: String(localized: "Změnu povolení se nepodařilo ověřit.")])
         }
     }
 }

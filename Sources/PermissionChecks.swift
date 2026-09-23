@@ -9,12 +9,12 @@ enum PermissionState: String, Sendable {
     var needsAttention: Bool { self == .denied || self == .notRequested || self == .unknown }
     var title: String {
         switch self {
-        case .checking: return "Kontroluji…"
-        case .available: return "Dostupné"
-        case .denied: return "Omezený přístup"
-        case .notRequested: return "Čeká na souhlas"
-        case .notApplicable: return "Nenalezeno"
-        case .unknown: return "Nelze ověřit"
+        case .checking: return String(localized: "Kontroluji…")
+        case .available: return String(localized: "Dostupné")
+        case .denied: return String(localized: "Omezený přístup")
+        case .notRequested: return String(localized: "Čeká na souhlas")
+        case .notApplicable: return String(localized: "Nenalezeno")
+        case .unknown: return String(localized: "Nelze ověřit")
         }
     }
 }
@@ -25,25 +25,25 @@ enum PermissionScope: String, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .personalFiles: return "Osobní složky"
-        case .cleanup: return "Úklid a Koš"
-        case .appData: return "Data aplikací"
-        case .development: return "Vývojářské nástroje"
-        case .applications: return "Seznam aplikací"
-        case .startup: return "Služby po spuštění"
-        case .automation: return "Automatizace System Events"
+        case .personalFiles: return String(localized: "Osobní složky")
+        case .cleanup: return String(localized: "Úklid a Koš")
+        case .appData: return String(localized: "Data aplikací")
+        case .development: return String(localized: "Vývojářské nástroje")
+        case .applications: return String(localized: "Seznam aplikací")
+        case .startup: return String(localized: "Služby po spuštění")
+        case .automation: return String(localized: "Automatizace System Events")
         }
     }
 
     var purpose: String {
         switch self {
-        case .personalFiles: return "Hledání velkých souborů na Ploše, ve Stažených souborech a dalších osobních složkách."
-        case .cleanup: return "Čtení mezipaměti, záznamů, Koše a dat Xcode."
-        case .appData: return "Hledání souvisejících dat a zbytků odinstalovaných aplikací."
+        case .personalFiles: return String(localized: "Hledání velkých souborů na Ploše, ve Stažených souborech a dalších osobních složkách.")
+        case .cleanup: return String(localized: "Čtení mezipaměti, záznamů, Koše a dat Xcode.")
+        case .appData: return String(localized: "Hledání souvisejících dat a zbytků odinstalovaných aplikací.")
         case .development: return "Xcode, Android, Java, Node a Homebrew; existující kořenové složky."
-        case .applications: return "Načtení aplikací. Přesun konkrétní aplikace může později vyžadovat správce."
-        case .startup: return "Čtení konfigurací služeb. Systémové služby zůstávají pouze pro čtení."
-        case .automation: return "Volitelné: potřebné pro čtení a změnu přihlašovacích aplikací, ne pro úklid."
+        case .applications: return String(localized: "Načtení aplikací. Přesun konkrétní aplikace může později vyžadovat správce.")
+        case .startup: return String(localized: "Čtení konfigurací služeb. Systémové služby zůstávají pouze pro čtení.")
+        case .automation: return String(localized: "Volitelné: potřebné pro čtení a změnu přihlašovacích aplikací, ne pro úklid.")
         }
     }
 
@@ -127,16 +127,16 @@ enum PermissionChecks {
         case noErr: return PermissionCheck(scope: .automation, state: .available)
         case OSStatus(errAEEventNotPermitted):
             return PermissionCheck(scope: .automation, state: .denied,
-                note: "macOS odepřel automatizaci. Povolte Nimbo → System Events v Nastavení systému → Soukromí a zabezpečení → Automatizace.")
+                note: String(localized: "macOS odepřel automatizaci. Povolte Nimbo → System Events v Nastavení systému → Soukromí a zabezpečení → Automatizace."))
         case OSStatus(errAEEventWouldRequireUserConsent):
             return PermissionCheck(scope: .automation, state: .notRequested,
-                note: "Souhlas ještě nebyl udělen. O systémový dialog požádáte tlačítkem Povolit automatizaci.")
+                note: String(localized: "Souhlas ještě nebyl udělen. O systémový dialog požádáte tlačítkem Povolit automatizaci."))
         case OSStatus(procNotFound):
             return PermissionCheck(scope: .automation, state: .unknown,
-                note: "System Events neběží, proto stav nelze zjistit. Není to důkaz zamítnutí oprávnění.")
+                note: String(localized: "System Events neběží, proto stav nelze zjistit. Není to důkaz zamítnutí oprávnění."))
         default:
             return PermissionCheck(scope: .automation, state: .unknown,
-                note: "macOS nevrátil jednoznačný stav automatizace (kód \(status)).")
+                note: String(localized: "macOS nevrátil jednoznačný stav automatizace (kód \(status))."))
         }
     }
 

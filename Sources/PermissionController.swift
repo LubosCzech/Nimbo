@@ -71,7 +71,7 @@ final class PermissionController: ObservableObject {
             for scope in pending {
                 if let index = checks.firstIndex(where: { $0.scope == scope }) {
                     checks[index] = PermissionCheck(scope: scope, state: .unknown,
-                        note: "Kontrola překročila časový limit. Dokončete případný systémový dialog a zkuste ji znovu.")
+                        note: String(localized: "Kontrola překročila časový limit. Dokončete případný systémový dialog a zkuste ji znovu."))
                 }
             }
             finish(token)
@@ -93,7 +93,7 @@ final class PermissionController: ObservableObject {
     func requestAutomation() {
         guard !isRequestingAutomation, !isChecking else { return }
         isRequestingAutomation = true
-        requestMessage = "Dokončete případný systémový dialog; okno Nimba můžete mezitím zavřít."
+        requestMessage = String(localized: "Dokončete případný systémový dialog; okno Nimba můžete mezitím zavřít.")
         Task {
             do {
                 // The documented preflight requires a running target. Launch
@@ -108,7 +108,7 @@ final class PermissionController: ObservableObject {
                 }.value
                 requestMessage = result.state == .available ? "Automatizace byla povolena." : result.note
             } catch {
-                requestMessage = "System Events nelze spustit: \(error.localizedDescription)"
+                requestMessage = String(localized: "System Events nelze spustit: \(error.localizedDescription)")
             }
             isRequestingAutomation = false
             recheck()

@@ -53,6 +53,10 @@ cp Assets/nimbo-icon-light-transparent.png "${RES_DIR}/nimbo-icon-light.png"
 cp Assets/nimbo-landscape-header.png "${RES_DIR}/nimbo-landscape-header.png"
 cp Assets/svtk-mark.png "${RES_DIR}/svtk-mark.png"
 
+# Katalog se překládá do .lproj při každém buildu; zdrojem pravdy je Localization/.
+xcrun xcstringstool compile Localization/Localizable.xcstrings --output-directory "${RES_DIR}"
+LOCALIZATIONS=$(ls -d "${RES_DIR}"/*.lproj 2>/dev/null | xargs -n1 basename | sed 's/\.lproj$//')
+
 plutil -create xml1 "${APP_DIR}/Contents/Info.plist"
 plutil -insert CFBundleName -string "${APP_NAME}" "${APP_DIR}/Contents/Info.plist"
 plutil -insert CFBundleDisplayName -string "${APP_NAME}" "${APP_DIR}/Contents/Info.plist"
@@ -62,6 +66,11 @@ plutil -insert CFBundlePackageType -string "APPL" "${APP_DIR}/Contents/Info.plis
 plutil -insert CFBundleVersion -string "$APP_BUILD" "${APP_DIR}/Contents/Info.plist"
 plutil -insert CFBundleShortVersionString -string "$APP_VERSION" "${APP_DIR}/Contents/Info.plist"
 plutil -insert LSMinimumSystemVersion -string "26.0" "${APP_DIR}/Contents/Info.plist"
+plutil -insert CFBundleDevelopmentRegion -string "cs" "${APP_DIR}/Contents/Info.plist"
+plutil -insert CFBundleLocalizations -json '[]' "${APP_DIR}/Contents/Info.plist"
+for LANG in $LOCALIZATIONS; do
+  plutil -insert CFBundleLocalizations.0 -string "$LANG" "${APP_DIR}/Contents/Info.plist"
+done
 plutil -insert LSApplicationCategoryType -string "public.app-category.utilities" "${APP_DIR}/Contents/Info.plist"
 plutil -insert NSHighResolutionCapable -bool YES "${APP_DIR}/Contents/Info.plist"
 plutil -insert NSAppleEventsUsageDescription -string "Nimbo používá System Events k zobrazení a změně aplikací spouštěných po přihlášení a Finder k přesunu položek do Koše s ověřením správce." "${APP_DIR}/Contents/Info.plist"

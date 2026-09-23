@@ -11,10 +11,10 @@ enum RemovalObstacle: String, Sendable, CaseIterable {
     var title: String {
         switch self {
         case .none: return ""
-        case .privacy: return "Chybí Úplný přístup k disku"
-        case .ownership: return "Položka patří jinému uživateli"
-        case .systemProtected: return "Položku chrání systém"
-        case .undetermined: return "macOS odepřel přístup"
+        case .privacy: return String(localized: "Chybí Úplný přístup k disku")
+        case .ownership: return String(localized: "Položka patří jinému uživateli")
+        case .systemProtected: return String(localized: "Položku chrání systém")
+        case .undetermined: return String(localized: "macOS odepřel přístup")
         }
     }
 
@@ -22,13 +22,13 @@ enum RemovalObstacle: String, Sendable, CaseIterable {
         switch self {
         case .none: return ""
         case .privacy:
-            return "macOS blokuje přístup kvůli ochraně soukromí. Povolte Nimbo v Nastavení systému → Soukromí a zabezpečení → Úplný přístup k disku a spusťte Nimbo znovu. Oprávnění správce tuto ochranu neobchází."
+            return String(localized: "macOS blokuje přístup kvůli ochraně soukromí. Povolte Nimbo v Nastavení systému → Soukromí a zabezpečení → Úplný přístup k disku a spusťte Nimbo znovu. Oprávnění správce tuto ochranu neobchází.")
         case .ownership:
-            return "Položku vlastní jiný uživatel nebo root a Nimbo na ni nemá právo zápisu. Přesuňte ji do Koše ve Finderu; macOS si sám vyžádá ověření správce."
+            return String(localized: "Položku vlastní jiný uživatel nebo root a Nimbo na ni nemá právo zápisu. Přesuňte ji do Koše ve Finderu; macOS si sám vyžádá ověření správce.")
         case .systemProtected:
-            return "Položka je chráněná integritou systému (SIP) nebo příznakem jen pro čtení. Odstranit ji nelze ani s oprávněním správce; použijte odinstalátor výrobce."
+            return String(localized: "Položka je chráněná integritou systému (SIP) nebo příznakem jen pro čtení. Odstranit ji nelze ani s oprávněním správce; použijte odinstalátor výrobce.")
         case .undetermined:
-            return "macOS odepřel přístup a důvod se nepodařilo jednoznačně určit. Technický detail u položky pomůže při hlášení chyby."
+            return String(localized: "macOS odepřel přístup a důvod se nepodařilo jednoznačně určit. Technický detail u položky pomůže při hlášení chyby.")
         }
     }
 
@@ -73,10 +73,10 @@ struct RemovalDiagnosis: Sendable, Equatable {
     var detail: String {
         var parts: [String] = []
         if let posixCode { parts.append("errno \(posixCode) (\(String(cString: strerror(posixCode))))") }
-        if let uid, let gid { parts.append("vlastník \(RemovalDiagnosis.userName(uid)):\(RemovalDiagnosis.groupName(gid))") }
-        if let mode { parts.append("práva \(String(format: "%03o", mode & 0o777))") }
+        if let uid, let gid { parts.append(String(localized: "vlastník \(RemovalDiagnosis.userName(uid)):\(RemovalDiagnosis.groupName(gid))")) }
+        if let mode { parts.append(String(localized: "práva \(String(format: "%03o", mode & 0o777))")) }
         let names = RemovalDiagnosis.flagNames(flags)
-        if !names.isEmpty { parts.append("příznaky \(names.joined(separator: ", "))") }
+        if !names.isEmpty { parts.append(String(localized: "příznaky \(names.joined(separator: ", "))")) }
         return parts.joined(separator: " · ")
     }
 
@@ -147,7 +147,7 @@ extension Array where Element == RemovalFailure {
     /// Alert body: the first few items, then what the user can actually do.
     func alertText(limit: Int = 4) -> String {
         var lines = prefix(limit).map(\.summary)
-        if count > limit { lines.append("… a další (\(count - limit))") }
+        if count > limit { lines.append(String(localized: "… a další (\(count - limit))")) }
         var text = lines.joined(separator: "\n")
         if let dominantObstacle { text += "\n\n" + dominantObstacle.advice }
         return text

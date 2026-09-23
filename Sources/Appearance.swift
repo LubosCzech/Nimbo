@@ -10,9 +10,9 @@ enum AppAppearance: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .system: return "Podle systému"
-        case .light: return "Světlý"
-        case .dark: return "Tmavý"
+        case .system: return String(localized: "Podle systému")
+        case .light: return String(localized: "Světlý")
+        case .dark: return String(localized: "Tmavý")
         }
     }
 

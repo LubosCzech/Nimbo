@@ -8,7 +8,7 @@ Interpolace `\\(x)` se převádí na %@ / %lld podle typu, jak to dělá SwiftUI
 import json, pathlib, re, sys
 
 SOURCES = pathlib.Path("Sources")
-CATALOG = pathlib.Path("Localization/Nimbo.xcstrings")
+CATALOG = pathlib.Path("Localization/Localizable.xcstrings")
 LANGUAGES = ["en", "de", "fr", "hi", "es"]
 SOURCE_LANGUAGE = "cs"
 

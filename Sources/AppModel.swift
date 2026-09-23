@@ -156,8 +156,8 @@ final class AppModel: ObservableObject {
             isCleaning = false
             lastCleanedBytes = failures.isEmpty ? bytes : 0
             alertMessage = failures.isEmpty
-                ? "Hotovo. Uvolněno \(bytes.fileSizeText)."
-                : "Některé položky se nepodařilo odstranit:\n\(failures.alertText())"
+                ? String(localized: "Hotovo. Uvolněno \(bytes.fileSizeText).")
+                : String(localized: "Některé položky se nepodařilo odstranit:\n\(failures.alertText())")
             scanCleanup()
         }
     }
@@ -169,9 +169,9 @@ final class AppModel: ObservableObject {
             let failures = await Task.detached { FileScanner.moveToTrash(urls) }.value
             if failures.isEmpty {
                 largeFiles.removeAll { urls.contains($0.url) }
-                alertMessage = "Vybrané soubory byly přesunuty do Koše."
+                alertMessage = String(localized: "Vybrané soubory byly přesunuty do Koše.")
             } else {
-                alertMessage = "Některé soubory se nepodařilo přesunout:\n\(failures.alertText())"
+                alertMessage = String(localized: "Některé soubory se nepodařilo přesunout:\n\(failures.alertText())")
             }
         }
     }
@@ -183,9 +183,9 @@ final class AppModel: ObservableObject {
             let failures = await Task.detached { FileScanner.moveToTrash(urls) }.value
             if failures.isEmpty {
                 orphanedData.removeAll { urls.contains($0.url) }
-                alertMessage = "Vybrané zbytky aplikací byly přesunuty do Koše."
+                alertMessage = String(localized: "Vybrané zbytky aplikací byly přesunuty do Koše.")
             } else {
-                alertMessage = "Některé zbytky se nepodařilo přesunout:\n\(failures.alertText())"
+                alertMessage = String(localized: "Některé zbytky se nepodařilo přesunout:\n\(failures.alertText())")
             }
         }
     }
@@ -197,9 +197,9 @@ final class AppModel: ObservableObject {
             let failures = await Task.detached { FileScanner.moveToTrash(urls) }.value
             if failures.isEmpty {
                 developerArtifacts.removeAll { urls.contains($0.url) }
-                alertMessage = "Vybraná vývojářská data byla přesunuta do Koše."
+                alertMessage = String(localized: "Vybraná vývojářská data byla přesunuta do Koše.")
             } else {
-                alertMessage = "Některá data se nepodařilo přesunout:\n\(failures.alertText())"
+                alertMessage = String(localized: "Některá data se nepodařilo přesunout:\n\(failures.alertText())")
             }
         }
     }
@@ -217,7 +217,7 @@ final class AppModel: ObservableObject {
         webLookup = WebLookup(
             title: app.name,
             query: "\(app.name) macOS application\(identifier)",
-            context: "Aplikace · verze \(app.version)"
+            context: String(localized: "Aplikace · verze \(app.version)")
         )
     }
 
@@ -225,7 +225,7 @@ final class AppModel: ObservableObject {
         webLookup = WebLookup(
             title: item.bundleIdentifier,
             query: "\(item.bundleIdentifier) macOS application bundle identifier",
-            context: "Možný zbytek aplikace · \(item.source)"
+            context: String(localized: "Možný zbytek aplikace · \(item.source)")
         )
     }
 
@@ -255,7 +255,7 @@ final class AppModel: ObservableObject {
                 applications.removeAll { $0.id == plan.app.id }
             }
             if report.failures.isEmpty {
-                alertMessage = "\(plan.app.name) byla přesunuta do Koše včetně vybraných zbytků."
+                alertMessage = String(localized: "\(plan.app.name) byla přesunuta do Koše včetně vybraných zbytků.")
             } else {
                 uninstallReport = report
             }
@@ -285,7 +285,7 @@ final class AppModel: ObservableObject {
                 }
                 if updated.failures.isEmpty {
                     uninstallReport = nil
-                    alertMessage = "\(report.appName) byla přesunuta do Koše včetně vybraných zbytků."
+                    alertMessage = String(localized: "\(report.appName) byla přesunuta do Koše včetně vybraných zbytků.")
                 } else {
                     uninstallReport = updated
                 }

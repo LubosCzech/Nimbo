@@ -13,6 +13,10 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "%@ dní": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "%@ · %@ POLOŽEK": {
       "extractionState": "manual",
       "localizations": {}
@@ -177,6 +181,18 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "Co Nimbo záměrně nedělá": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Co startuje s Macem, zpomaluje ho po celou dobu běhu. Tohle bývá největší rozdíl.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Co zpomaluje Mac": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "Co zůstalo po odinstalaci": {
       "extractionState": "manual",
       "localizations": {}
@@ -202,6 +218,10 @@
       "localizations": {}
     },
     "Diagnostické záznamy npm": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Doba běhu": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -361,7 +381,15 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "Koupit kávu": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "Koš": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Kávu pro vývojáře": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -378,6 +406,10 @@
       "localizations": {}
     },
     "Lokálně na Macu": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Mac běží krátce.": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -405,7 +437,19 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "Méně než den": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Místa je dost. Nízké volné místo je nejčastější skutečná příčina zpomalení.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "NALEZENO %@ POLOŽEK": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "NEJNÁROČNĚJŠÍ PROCESY": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -489,6 +533,22 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "Neopravuje oprávnění disku. Od macOS 10.11 se o systémové soubory stará sám systém.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Nespouští periodické skripty. Na dnešním macOS už neexistují.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Neukončuje procesy. Ukáže je; ukončení patří do Monitoru aktivity.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Neuvolňuje paměť. macOS v ní drží data, aby je nemusel číst z disku; vyprázdnit ji znamená příští čtení zpomalit.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "Nevybráno": {
       "extractionState": "manual",
       "localizations": {}
@@ -569,6 +629,10 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "Obsazená paměť sama o sobě není problém: macOS v ní drží data, aby je nemusel číst z disku.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "Odebrat sekci z výběru": {
       "extractionState": "manual",
       "localizations": {}
@@ -593,6 +657,14 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "Odkládací soubor": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Odkládá se málo, paměť stačí.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "Odstranit vývojářská data?": {
       "extractionState": "manual",
       "localizations": {}
@@ -610,6 +682,10 @@
       "localizations": {}
     },
     "Otevře podrobnosti kontroly oprávnění": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Otevřít Monitor aktivity": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -641,7 +717,19 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "PID %@": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Po delším běhu se vyplatí Mac restartovat.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "Po spuštění": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Pod desetinou volného místa si macOS hůř poradí s odkládáním i snímky disku.": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -650,6 +738,10 @@
       "localizations": {}
     },
     "Podpora iOS zařízení": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Podpořit vývoj Nimba": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -682,6 +774,10 @@
       "localizations": {}
     },
     "Položku vlastní jiný uživatel nebo root a Nimbo na ni nemá právo zápisu. Přesuňte ji do Koše ve Finderu; macOS si sám vyžádá ověření správce.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Položky po spuštění": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -775,7 +871,14 @@
     },
     "Přehled": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overview"
+          }
+        }
+      }
     },
     "Přepínače služeb určují povolení spuštění, nikoli to, zda proces právě běží. Služby se mohou spouštět také podle potřeby nebo plánu. Systémové služby a moderní položky na pozadí spravujte v Nastavení macOS.": {
       "extractionState": "manual",
@@ -870,6 +973,10 @@
       "localizations": {}
     },
     "Skenuje pouze vaše osobní složky, nikdy systémová data.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Slouží vám Nimbo dobře?": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -969,6 +1076,10 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "Teď ne, zeptejte se později": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "Tmavý": {
       "extractionState": "manual",
       "localizations": {}
@@ -985,11 +1096,19 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "Už jsem přispěl": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "Uživatelská instalace JDK": {
       "extractionState": "manual",
       "localizations": {}
     },
     "Uživatelská služba": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "V pořádku": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -1014,6 +1133,14 @@
       "localizations": {}
     },
     "Volitelné: potřebné pro čtení a změnu přihlašovacích aplikací, ne pro úklid.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Volná paměť": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Volné místo": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -1065,6 +1192,10 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "Vyžaduje pozornost": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "Vzhled": {
       "extractionState": "manual",
       "localizations": {}
@@ -1080,6 +1211,17 @@
     "Vítejte v Nimbu": {
       "extractionState": "manual",
       "localizations": {}
+    },
+    "Výkon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Performance"
+          }
+        }
+      }
     },
     "Výsledek odinstalace": {
       "extractionState": "manual",
@@ -1125,6 +1267,10 @@
       "extractionState": "manual",
       "localizations": {}
     },
+    "Zeptáme se nanejvýš jednou za měsíc. Po vašem potvrzení už nikdy.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
     "Zkontrolované kategorie": {
       "extractionState": "manual",
       "localizations": {}
@@ -1150,6 +1296,10 @@
       "localizations": {}
     },
     "Změnu povolení se nepodařilo ověřit.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Změřit znovu": {
       "extractionState": "manual",
       "localizations": {}
     },
@@ -1230,6 +1380,10 @@
       "localizations": {}
     },
     "Čtení mezipaměti, záznamů, Koše a dat Xcode.": {
+      "extractionState": "manual",
+      "localizations": {}
+    },
+    "Část paměti se odkládá na disk. Pomůže zavřít aplikace, které jí drží nejvíc.": {
       "extractionState": "manual",
       "localizations": {}
     },

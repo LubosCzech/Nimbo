@@ -7,7 +7,7 @@ Klíč, který není ve zdroji, skript odmítne — překlep by jinak zmizel bez
 """
 import json, pathlib, sys
 
-CATALOG = pathlib.Path("Localization/Nimbo.xcstrings")
+CATALOG = pathlib.Path("Localization/Localizable.xcstrings")
 
 def unit(value: str) -> dict:
     return {"stringUnit": {"state": "translated", "value": value}}

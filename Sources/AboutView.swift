@@ -10,7 +10,7 @@ final class AboutWindow {
         if panel == nil {
             let window = NSPanel(contentRect: NSRect(x: 0, y: 0, width: 380, height: 410),
                 styleMask: [.titled, .closable, .utilityWindow], backing: .buffered, defer: false)
-            window.title = "O aplikaci Nimbo"
+            window.title = String(localized: "O aplikaci Nimbo")
             window.isReleasedWhenClosed = false
             // NSPanel hides itself when the app deactivates; an About window
             // must stay put when the user switches away and back.
@@ -41,7 +41,7 @@ private struct AboutContent: View {
         let info = Bundle.main.infoDictionary
         let version = info?["CFBundleShortVersionString"] as? String ?? "—"
         let build = info?["CFBundleVersion"] as? String ?? "—"
-        return "Verze \(version) (\(build))"
+        return String(localized: "Verze \(version) (\(build))")
     }
 
     private var year: Int { Calendar.current.component(.year, from: Date()) }

@@ -58,7 +58,7 @@ final class StartupModel: ObservableObject {
         panel.allowsMultipleSelection = false
         panel.allowedContentTypes = [.applicationBundle]
         panel.directoryURL = URL(fileURLWithPath: "/Applications")
-        panel.prompt = "Spouštět po přihlášení"
+        panel.prompt = String(localized: "Spouštět po přihlášení")
         guard panel.runModal() == .OK, let url = panel.url else { return }
         includeApps = true
         change(StartupItem(name: url.deletingPathExtension().lastPathComponent, path: url.path,

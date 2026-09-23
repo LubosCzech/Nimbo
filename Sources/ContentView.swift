@@ -374,11 +374,11 @@ private struct DeveloperDataView: View {
                 } else if model.developerArtifacts.isEmpty {
                     EmptyState(icon: "terminal", title: "Připraveno k analýze", text: "Najdeme Xcode data, Android SDK a emulátory, JDK, Node/npm/pnpm/Yarn i Homebrew balíčky.")
                 } else if model.visibleDeveloperArtifacts.isEmpty {
-                    EmptyState(icon: model.selectedDevelopmentCategory.icon, title: "Nic nenalezeno", text: "Pro prostředí \(model.selectedDevelopmentCategory.rawValue) nebyla nalezena žádná známá data.")
+                    EmptyState(icon: model.selectedDevelopmentCategory.icon, title: "Nic nenalezeno", text: "Pro prostředí \(model.selectedDevelopmentCategory.title) nebyla nalezena žádná známá data.")
                 } else {
                     let visible = model.visibleDeveloperArtifacts
                     HStack {
-                        Text("\(model.selectedDevelopmentCategory.rawValue.uppercased()) · \(visible.count) POLOŽEK").font(.system(size: 10, weight: .bold)).tracking(1.2).foregroundStyle(.secondary)
+                        Text("\(model.selectedDevelopmentCategory.title.uppercased()) · \(visible.count) POLOŽEK").font(.system(size: 10, weight: .bold)).tracking(1.2).foregroundStyle(.secondary)
                         Spacer()
                         Text(visible.reduce(Int64(0)) { $0 + $1.size }.fileSizeText).font(.caption).foregroundStyle(.secondary)
                     }
@@ -424,7 +424,7 @@ private struct DeveloperArtifactRow: View {
             VStack(alignment: .leading, spacing: 3) {
                 HStack(spacing: 7) {
                     Text(artifact.title).font(.system(size: 13.5, weight: .semibold)).lineLimit(1)
-                    Text(artifact.kind.rawValue.uppercased()).font(.system(size: 8.5, weight: .bold)).tracking(0.6)
+                    Text(artifact.kind.title.uppercased()).font(.system(size: 8.5, weight: .bold)).tracking(0.6)
                         .padding(.horizontal, 6).padding(.vertical, 3).background(CleanerTheme.panelStrong, in: Capsule())
                     if artifact.isRecommended {
                         Text("DOPORUČENO").font(.system(size: 8.5, weight: .bold)).foregroundStyle(CleanerTheme.mint)
@@ -489,7 +489,7 @@ private struct QuickAction: View {
                     Image(systemName: "chevron.right").font(.caption).foregroundStyle(.tertiary)
                 }
                 VStack(alignment: .leading, spacing: 3) {
-                    Text(section.rawValue).font(.system(size: 14, weight: .semibold))
+                    Text(section.title).font(.system(size: 14, weight: .semibold))
                     Text(detail).font(.caption).foregroundStyle(.secondary)
                 }
             }
@@ -812,7 +812,7 @@ private struct PrivacyView: View {
 }
 
 private struct PrivacyRow: View {
-    let icon: String; let title: String; let text: String; let color: Color
+    let icon: String; let title: LocalizedStringKey; let text: LocalizedStringKey; let color: Color
     var body: some View {
         HStack(spacing: 15) {
             NimboIconBadge(symbol: icon, color: color)
@@ -889,7 +889,7 @@ private struct EmptyState: View {
 }
 
 private struct BottomActionBar: View {
-    let label: String; let disabled: Bool; let action: () -> Void
+    let label: LocalizedStringKey; let disabled: Bool; let action: () -> Void
     var body: some View {
         HStack {
             Label("Před odstraněním vždy uvidíte potvrzení", systemImage: "shield.checkered").font(.caption).foregroundStyle(.secondary)

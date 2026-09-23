@@ -10,7 +10,7 @@ final class DiskAccessHelp {
         if panel == nil {
             let window = NSPanel(contentRect: NSRect(x: 0, y: 0, width: 420, height: 470),
                 styleMask: [.titled, .closable, .utilityWindow], backing: .buffered, defer: false)
-            window.title = "Přístup k disku — Nimbo"
+            window.title = String(localized: "Přístup k disku — Nimbo")
             window.isReleasedWhenClosed = false
             window.hidesOnDeactivate = false
             window.level = .floating

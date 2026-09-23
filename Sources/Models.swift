@@ -19,15 +19,15 @@ enum SidebarSection: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .overview: return "Přehled"
-        case .performance: return "Výkon"
-        case .cleanup: return "Chytrý úklid"
-        case .largeFiles: return "Velké soubory"
-        case .applications: return "Aplikace"
-        case .startup: return "Po spuštění"
-        case .leftovers: return "Zbytky aplikací"
-        case .development: return "Vývojářská data"
-        case .privacy: return "Soukromí"
+        case .overview: return String(localized: "Přehled")
+        case .performance: return String(localized: "Výkon")
+        case .cleanup: return String(localized: "Chytrý úklid")
+        case .largeFiles: return String(localized: "Velké soubory")
+        case .applications: return String(localized: "Aplikace")
+        case .startup: return String(localized: "Po spuštění")
+        case .leftovers: return String(localized: "Zbytky aplikací")
+        case .development: return String(localized: "Vývojářská data")
+        case .privacy: return String(localized: "Soukromí")
         }
     }
 
@@ -56,18 +56,18 @@ enum CleanupKind: String, CaseIterable, Identifiable, Hashable {
 
     var title: String {
         switch self {
-        case .caches: return "Mezipaměť aplikací"
-        case .logs: return "Systémové záznamy"
-        case .trash: return "Koš"
-        case .developer: return "Vývojářská data"
+        case .caches: return String(localized: "Mezipaměť aplikací")
+        case .logs: return String(localized: "Systémové záznamy")
+        case .trash: return String(localized: "Koš")
+        case .developer: return String(localized: "Vývojářská data")
         }
     }
 
     var subtitle: String {
         switch self {
-        case .caches: return "Dočasná data, která aplikace znovu vytvoří"
-        case .logs: return "Starší diagnostické a provozní záznamy"
-        case .trash: return "Položky, které už jsou v Koši"
+        case .caches: return String(localized: "Dočasná data, která aplikace znovu vytvoří")
+        case .logs: return String(localized: "Starší diagnostické a provozní záznamy")
+        case .trash: return String(localized: "Položky, které už jsou v Koši")
         case .developer: return "DerivedData a archivy Xcode"
         }
     }
@@ -186,13 +186,13 @@ enum ArtifactKind: String, Hashable {
 
     var title: String {
         switch self {
-        case .cache: return "Cache"
-        case .archive: return "Archiv"
-        case .simulator: return "Simulátor"
+        case .cache: return String(localized: "Cache")
+        case .archive: return String(localized: "Archiv")
+        case .simulator: return String(localized: "Simulátor")
         case .sdk: return "SDK"
         case .runtime: return "Runtime"
-        case .package: return "Balíček"
-        case .logs: return "Logy"
+        case .package: return String(localized: "Balíček")
+        case .logs: return String(localized: "Logy")
         }
     }
 }
@@ -236,8 +236,8 @@ enum GoogleSearchMode: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .ai: return "AI režim"
-        case .standard: return "Výsledky"
+        case .ai: return String(localized: "AI režim")
+        case .standard: return String(localized: "Výsledky")
         }
     }
 
@@ -262,13 +262,13 @@ enum OrphanSource: String, CaseIterable, Hashable {
 
     var title: String {
         switch self {
-        case .applicationSupport: return "Data aplikace"
-        case .caches: return "Mezipaměť"
-        case .preferences: return "Nastavení"
-        case .savedState: return "Uložený stav"
-        case .container: return "Kontejner"
-        case .httpStorage: return "HTTP úložiště"
-        case .webKit: return "WebKit data"
+        case .applicationSupport: return String(localized: "Data aplikace")
+        case .caches: return String(localized: "Mezipaměť")
+        case .preferences: return String(localized: "Nastavení")
+        case .savedState: return String(localized: "Uložený stav")
+        case .container: return String(localized: "Kontejner")
+        case .httpStorage: return String(localized: "HTTP úložiště")
+        case .webKit: return String(localized: "WebKit data")
         }
     }
 

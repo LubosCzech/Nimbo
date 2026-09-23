@@ -88,7 +88,7 @@ enum UninstallService {
         }
         for url in report.skipped where !moved.contains(url) {
             failures.append(RemovalFailure(url: url,
-                                           message: messages[url] ?? "Finder položku nepřesunul."))
+                                           message: messages[url] ?? String(localized: "Finder položku nepřesunul.")))
         }
         updated.failures = failures
         updated.skipped = []
