@@ -45,7 +45,7 @@ def is_ui_string(value: str) -> bool:
 SPECIFIERS = [
     (r"\.pid\b|^status$|^posixCode$", "%d"),        # Int32
     (r"^getuid\(\)$", "%u"),                         # uid_t
-    (r"^Int\(|\.count\b|Count\b|^days$", "%lld"),   # Int
+    (r"^Int\(|\bcount\b|Count\b|^days$", "%lld"),   # Int
 ]
 
 
@@ -143,9 +143,13 @@ def main() -> int:
         catalog = json.loads(CATALOG.read_text())
     strings = catalog.setdefault("strings", {})
 
+    # Přesná shoda. Prefix jen tam, kde je zapsán s hvězdičkou — jinak by
+    # "Nimbo" vyřadilo každou větu, která jím začíná.
     blocked = denylist()
+    prefixes = tuple(b[:-1] for b in blocked if b.endswith("*"))
+    exact = {b for b in blocked if not b.endswith("*")}
     found = {k: v for k, v in found.items()
-             if k not in blocked and not any(k.startswith(b) for b in blocked)}
+             if k not in exact and not (prefixes and k.startswith(prefixes))}
     for key in found:
         entry = strings.setdefault(key, {})
         entry.setdefault("extractionState", "manual")

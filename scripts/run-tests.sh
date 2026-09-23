@@ -43,6 +43,7 @@ swift_suite performance-tests \
 # Verifies SF Symbols exist on THIS macOS runtime, so it belongs to a release.
 swift_suite design-tests Sources/Models.swift Tests/DesignTests.swift
 
+shell_suite translation-tests python3 scripts/check-translations.py
 shell_suite appcast-tests python3 -m unittest discover -s Tests -p 'test_*.py'
 shell_suite release-mode-tests bash Tests/release-mode-tests.sh
 

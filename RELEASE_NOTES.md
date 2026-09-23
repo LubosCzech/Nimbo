@@ -1,16 +1,23 @@
-# Nimbo 1.6.1
+# Nimbo 1.6.2
 
-## Nově vyžaduje macOS 26
+## Pět nových jazyků
 
-- Nimbo od této verze běží na macOS 26 a novějším. Na starších systémech zůstane funkční verze 1.6 a aktualizace se nenabídne.
-- Odpadlo tím souběžné vykreslování pro starší systémy, takže Liquid Glass je nativní všude a není potřeba náhradní vzhled.
+- Nimbo mluví anglicky, německy, francouzsky, španělsky a hindsky. Jazyk se řídí nastavením macOS.
+- Čeština zůstává výchozí a beze změny významu. Opravily se v ní tvary množného čísla: dřív stálo „1 aplikací“, nově „1 aplikace“.
 
-## Vzhled
+## Výkon
 
-- Spodní lišta s akcemi je nově plovoucí skleněný panel odsazený od okrajů okna. Obsah pod ní prosvítá rozostřený, takže je vidět, že seznam pokračuje dál.
-- Rohy lišty sledují zaoblení okna místo pevně zvolené hodnoty.
-- Při zapnutém nastavení „Omezit průhlednost“ v Zpřístupnění se místo skla vykreslí neprůhledná plocha s obrysem. Toto nastavení je žádost nekreslit průsvitnost vůbec, ne ji jen zjemnit.
+- Nová sekce ukazuje, co Mac skutečně zpomaluje: volné místo, odkládací soubor, volnou paměť, počet položek po spuštění, dobu běhu a nejnáročnější procesy.
+- U každého nálezu vede odkaz tam, kde se s ním dá něco udělat. Měří se až při otevření sekce, aby samotné sledování nic nestálo.
+- Sekce vyjmenovává i to, co Nimbo záměrně nedělá a proč. Neuvolňuje paměť, nespouští periodické skripty, neopravuje oprávnění disku a neukončuje procesy.
 
-## Zbytky aplikací
+## Podpora vývoje
 
-- Nimbo už mezi zbytky nenabízí vlastní data. Po změně identifikátoru ve verzi 1.6 se jeho dřívější mezipaměť ukazovala jako osiřelá, přestože patří jemu.
+- V okně O aplikaci přibyl odkaz na Buy Me a Coffee.
+- Nimbo se po týdnu a pak jednou měsíčně zeptá, jestli vám slouží dobře. Jakmile odpovíte, že jste přispěli, už se neozve.
+
+## Opravy
+
+- Karty na Přehledu a některé popisky ukazovaly vnitřní názvy místo českých. Opraveno.
+- Systémové služby zůstávají jen pro čtení spolehlivě ve všech jazycích. Dřív o tom rozhodovalo porovnání zobrazovaného textu, což by se v cizím jazyce chovalo jinak.
+- Seznam vypnutých přihlašovacích položek uložený staršími verzemi zůstává zachovaný.

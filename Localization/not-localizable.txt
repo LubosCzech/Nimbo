@@ -7,7 +7,7 @@ Library/Saved Application State
 Library/Saved Application State/%@.savedState
 Application Support
 # Identifikace prohlížeče pro Google; změna mění, co Google vrátí.
-Mozilla/5.0
+Mozilla/5.0*
 # Názvy cizích produktů a nástrojů zůstávají v originále.
 Google AI Mode
 Android SDK Build Tools
