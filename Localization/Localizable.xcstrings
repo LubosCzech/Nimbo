@@ -504,7 +504,38 @@
     },
     "Analýza disku probíhá lokálně. Pouze po kliknutí na ⓘ se Googlu odešle název a technický kontext položky, nikdy její cesta. Google cookies se uchovají kvůli souhlasu a přihlášení. Kontrola aktualizací se připojuje k GitHubu.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Festplattenanalyse läuft lokal. Erst nach einem Klick auf ⓘ werden Name und technischer Kontext eines Objekts an Google gesendet, niemals sein Pfad. Google-Cookies bleiben für Einwilligung und Anmeldung erhalten. Die Update-Prüfung verbindet sich mit GitHub."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disk analysis runs locally. Only after you click ⓘ is an item's name and technical context sent to Google, never its path. Google cookies are kept for consent and sign-in. Update checks connect to GitHub."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El análisis del disco es local. El nombre y el contexto técnico de un elemento solo se envían a Google tras pulsar ⓘ, nunca su ruta. Las cookies de Google se conservan para el consentimiento y el inicio de sesión. La búsqueda de actualizaciones se conecta a GitHub."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'analyse du disque est locale. Le nom et le contexte technique d'un élément ne sont envoyés à Google qu'après un clic sur ⓘ, jamais son chemin. Les cookies Google sont conservés pour le consentement et la connexion. La recherche de mises à jour se connecte à GitHub."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डिस्क विश्लेषण स्थानीय रूप से चलता है। ⓘ पर क्लिक करने के बाद ही आइटम का नाम और तकनीकी संदर्भ Google को भेजा जाता है, पथ कभी नहीं। सहमति और साइन-इन के लिए Google कुकीज़ रखी जाती हैं। अपडेट जाँच GitHub से जुड़ती है।"
+          }
+        }
+      }
     },
     "Analýza souborů": {
       "extractionState": "manual",
@@ -823,7 +854,38 @@
     },
     "Aplikace: povolte Nimbu ovládání System Events v Soukromí a zabezpečení → Automatizace.\\n%@": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps: Erlauben Sie Nimbo unter Datenschutz & Sicherheit → Automation die Steuerung von System Events.\\n%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps: allow Nimbo to control System Events in Privacy & Security → Automation.\\n%@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps: permite que Nimbo controle System Events en Privacidad y seguridad → Automatización.\\n%@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps : autorisez Nimbo à contrôler System Events dans Confidentialité et sécurité → Automatisation.\\n%@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऐप्स: गोपनीयता और सुरक्षा → ऑटोमेशन में Nimbo को System Events नियंत्रित करने दें।\\n%@"
+          }
+        }
+      }
     },
     "Aplikaci se nepodařilo přesunout": {
       "extractionState": "manual",
@@ -2273,27 +2335,213 @@
     },
     "Globální npm balíček": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Globales npm-Paket"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Global npm package"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paquete npm global"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paquet npm global"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "वैश्विक npm पैकेज"
+          }
+        }
+      }
     },
     "Globální úložiště balíčků pnpm": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Globaler pnpm-Paketspeicher"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Global pnpm package store"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Almacén global de paquetes pnpm"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Magasin global de paquets pnpm"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "वैश्विक pnpm पैकेज स्टोर"
+          }
+        }
+      }
     },
     "Google relace se pamatuje": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Google-Sitzung wird gespeichert"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Google session is remembered"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La sesión de Google se recuerda"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La session Google est mémorisée"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Google सत्र याद रखा जाता है"
+          }
+        }
+      }
     },
     "Gradle cache": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gradle-Cache"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gradle cache"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caché de Gradle"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cache Gradle"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gradle कैश"
+          }
+        }
+      }
     },
     "Gradle daemon": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gradle-Daemon"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gradle daemon"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daemon de Gradle"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Démon Gradle"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gradle डेमॉन"
+          }
+        }
+      }
     },
     "Gradle distribuce": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gradle-Distributionen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gradle distributions"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distribuciones de Gradle"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distributions Gradle"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gradle वितरण"
+          }
+        }
+      }
     },
     "HTTP úložiště": {
       "extractionState": "manual",
@@ -2332,11 +2580,73 @@
     },
     "Historické distribuční buildy a dSYM": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frühere Distributions-Builds und dSYMs"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Past distribution builds and dSYMs"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compilaciones de distribución antiguas y dSYM"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anciens builds de distribution et dSYM"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पुराने वितरण बिल्ड और dSYM"
+          }
+        }
+      }
     },
     "Hlavičky pro kompilaci nativních modulů": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Header zum Kompilieren nativer Module"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Headers for compiling native modules"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cabeceras para compilar módulos nativos"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En-têtes pour compiler les modules natifs"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नेटिव मॉड्यूल संकलन हेतु हेडर"
+          }
+        }
+      }
     },
     "Hledat aplikaci": {
       "extractionState": "manual",
@@ -2445,15 +2755,108 @@
     },
     "Hledání souvisejících dat a zbytků odinstalovaných aplikací.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sucht zugehörige Daten und Reste deinstallierter Apps."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finding related data and leftovers from uninstalled apps."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca datos relacionados y restos de apps desinstaladas."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recherche des données associées et des résidus d'apps désinstallées."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संबंधित डेटा और अनइंस्टॉल ऐप्स का बचा डेटा खोजना।"
+          }
+        }
+      }
     },
     "Hledání velkých souborů na Ploše, ve Stažených souborech a dalších osobních složkách.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sucht große Dateien auf dem Schreibtisch, in Downloads und weiteren persönlichen Ordnern."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finding large files on the Desktop, in Downloads and other personal folders."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca archivos grandes en el escritorio, en Descargas y otras carpetas personales."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recherche de fichiers volumineux sur le bureau, dans Téléchargements et d'autres dossiers personnels."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डेस्कटॉप, डाउनलोड और अन्य निजी फ़ोल्डरों में बड़ी फ़ाइलें खोजना।"
+          }
+        }
+      }
     },
     "Hloubková kontrola": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiefenprüfung"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deep check"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comprobación profunda"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contrôle approfondi"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "गहन जाँच"
+          }
+        }
+      }
     },
     "Hotovo": {
       "extractionState": "manual",
@@ -2492,15 +2895,108 @@
     },
     "Hotovo. Uvolněno %@.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fertig. %@ freigegeben."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done. %@ freed."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listo. %@ liberados."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminé. %@ libérés."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूर्ण। %@ खाली हुआ।"
+          }
+        }
+      }
     },
     "Indexy a výsledky sestavení; Xcode je znovu vytvoří": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Indizes und Build-Ergebnisse; Xcode legt sie neu an"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Indexes and build output; Xcode recreates them"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Índices y resultados de compilación; Xcode los vuelve a crear"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Index et résultats de compilation ; Xcode les recrée"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इंडेक्स और बिल्ड परिणाम; Xcode उन्हें फिर बना लेता है"
+          }
+        }
+      }
     },
     "Kompletní odstranění": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vollständiges Entfernen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete removal"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminación completa"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suppression complète"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूर्ण निष्कासन"
+          }
+        }
+      }
     },
     "Kontejner": {
       "extractionState": "manual",
@@ -2539,19 +3035,143 @@
     },
     "Kontrola jednou denně. Stažení a instalaci potvrdíte v dialogu Sparkle.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prüfung einmal täglich. Download und Installation bestätigen Sie im Sparkle-Dialog."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checked once a day. You confirm the download and installation in the Sparkle dialog."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comprobación una vez al día. La descarga y la instalación se confirman en el diálogo de Sparkle."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vérification une fois par jour. Vous confirmez le téléchargement et l'installation dans la fenêtre Sparkle."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दिन में एक बार जाँच। डाउनलोड और इंस्टॉल की पुष्टि आप Sparkle डायलॉग में करते हैं।"
+          }
+        }
+      }
     },
     "Kontrola překročila časový limit. Dokončete případný systémový dialog a zkuste ji znovu.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Prüfung hat das Zeitlimit überschritten. Schließen Sie einen eventuellen Systemdialog ab und versuchen Sie es erneut."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The check timed out. Finish any system dialog and try again."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La comprobación superó el tiempo límite. Complete el diálogo del sistema e inténtelo de nuevo."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le contrôle a expiré. Terminez la boîte de dialogue système éventuelle et réessayez."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जाँच का समय समाप्त हुआ। कोई सिस्टम डायलॉग हो तो पूरा करें और दोबारा प्रयास करें।"
+          }
+        }
+      }
     },
     "Kontrolované složky (%lld)": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geprüfte Ordner (%lld)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checked folders (%lld)"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carpetas comprobadas (%lld)"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dossiers vérifiés (%lld)"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जाँचे गए फ़ोल्डर (%lld)"
+          }
+        }
+      }
     },
     "Kontrolované složky jsou dostupné. Zobrazit podrobnosti.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die geprüften Ordner sind zugänglich. Details anzeigen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The checked folders are accessible. Show details."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las carpetas comprobadas son accesibles. Mostrar detalles."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les dossiers vérifiés sont accessibles. Afficher les détails."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जाँचे गए फ़ोल्डर सुलभ हैं। विवरण देखें।"
+          }
+        }
+      }
     },
     "Kontroluji oprávnění…": {
       "extractionState": "manual",
@@ -2800,15 +3420,108 @@
     },
     "Logy instalací a sestavení": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installations- und Build-Protokolle"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installation and build logs"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registros de instalación y compilación"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Journaux d'installation et de compilation"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इंस्टॉल और बिल्ड लॉग"
+          }
+        }
+      }
     },
     "Lokální cache Maven závislostí": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lokaler Cache der Maven-Abhängigkeiten"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Local cache of Maven dependencies"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caché local de dependencias de Maven"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cache local des dépendances Maven"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maven निर्भरताओं का स्थानीय कैश"
+          }
+        }
+      }
     },
     "Lokálně na Macu": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lokal auf dem Mac"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Locally on the Mac"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Localmente en el Mac"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En local sur le Mac"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mac पर स्थानीय रूप से"
+          }
+        }
+      }
     },
     "Mac běží krátce.": {
       "extractionState": "manual",
@@ -2847,7 +3560,38 @@
     },
     "Mapuji vývojářské nástroje a balíčky…": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entwicklerwerkzeuge und Pakete werden erfasst…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mapping developer tools and packages…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Localizando herramientas y paquetes de desarrollo…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inventaire des outils et paquets de développement…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डेवलपर टूल और पैकेज खोजे जा रहे हैं…"
+          }
+        }
+      }
     },
     "Mezipaměť": {
       "extractionState": "manual",
@@ -2886,11 +3630,73 @@
     },
     "Mezipaměť aplikací": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App-Caches"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App caches"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cachés de apps"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caches des apps"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऐप कैश"
+          }
+        }
+      }
     },
     "Mezipaměť, záznamy a Koš": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caches, Protokolle und Papierkorb"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caches, logs and the Trash"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cachés, registros y papelera"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caches, journaux et corbeille"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैश, लॉग और ट्रैश"
+          }
+        }
+      }
     },
     "Minimální velikost": {
       "extractionState": "manual",
@@ -2929,7 +3735,38 @@
     },
     "Možný zbytek aplikace · %@": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mögliche App-Restdatei · %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Possible app leftover · %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Posible resto de app · %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Résidu d'app possible · %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संभावित ऐप अवशेष · %@"
+          }
+        }
+      }
     },
     "Méně než den": {
       "extractionState": "manual",
@@ -2968,35 +3805,283 @@
     },
     "Místa je dost. Nízké volné místo je nejčastější skutečná příčina zpomalení.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es ist genug Platz vorhanden. Wenig freier Speicher ist die häufigste echte Ursache für Verlangsamung."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There is plenty of space. Low free space is the most common real cause of slowdowns."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hay espacio de sobra. La falta de espacio libre es la causa real más común de lentitud."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'espace est suffisant. Le manque d'espace libre est la cause réelle la plus fréquente de ralentissement."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जगह पर्याप्त है। कम खाली जगह धीमेपन का सबसे आम वास्तविक कारण है।"
+          }
+        }
+      }
     },
     "NALEZENO %lld POLOŽEK": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld OBJEKTE GEFUNDEN"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ITEMS FOUND"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ELEMENTOS ENCONTRADOS"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ÉLÉMENTS TROUVÉS"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld आइटम मिले"
+          }
+        }
+      }
     },
     "NEJNÁROČNĚJŠÍ PROCESY": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RESSOURCENSTÄRKSTE PROZESSE"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HEAVIEST PROCESSES"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PROCESOS MÁS EXIGENTES"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PROCESSUS LES PLUS LOURDS"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सबसे भारी प्रक्रियाएँ"
+          }
+        }
+      }
     },
     "Nainstalovaná Homebrew formule": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installierte Homebrew-Formel"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installed Homebrew formula"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fórmula de Homebrew instalada"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formule Homebrew installée"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इंस्टॉल की गई Homebrew फ़ॉर्मूला"
+          }
+        }
+      }
     },
     "Nainstalované Homebrew a globální npm balíčky se pouze zobrazují. Odinstalujte je jejich správcem balíčků.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installierte Homebrew- und globale npm-Pakete werden nur angezeigt. Deinstallieren Sie sie mit ihrem Paketmanager."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installed Homebrew and global npm packages are only listed. Uninstall them with their own package manager."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los paquetes de Homebrew y npm globales instalados solo se muestran. Desinstálelos con su propio gestor de paquetes."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les paquets Homebrew et npm globaux installés sont seulement listés. Désinstallez-les avec leur gestionnaire de paquets."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इंस्टॉल किए Homebrew और वैश्विक npm पैकेज केवल दिखाए जाते हैं। उन्हें उनके पैकेज मैनेजर से हटाएँ।"
+          }
+        }
+      }
     },
     "Nainstalované aplikace": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installierte Apps"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installed apps"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps instaladas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps installées"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इंस्टॉल की गई ऐप्स"
+          }
+        }
+      }
     },
     "Nainstalovaný Homebrew cask": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installiertes Homebrew-Cask"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installed Homebrew cask"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cask de Homebrew instalado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cask Homebrew installé"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इंस्टॉल किया गया Homebrew cask"
+          }
+        }
+      }
     },
     "Najděte prostor k uvolnění": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Platz zum Freigeben finden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find space to reclaim"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encuentra espacio que recuperar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trouver de l'espace à libérer"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "खाली करने योग्य जगह खोजें"
+          }
+        }
+      }
     },
     "Nalezeno v kategoriích úklidu. Před odstraněním zkontrolujte jejich obsah.": {
       "extractionState": "manual",
@@ -3011,203 +4096,1753 @@
     },
     "Nastavení": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferences"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réglages"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सेटिंग्स"
+          }
+        }
+      }
     },
     "Nastavení automatizace": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automations-Einstellungen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automation settings"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes de automatización"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réglages d'automatisation"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऑटोमेशन सेटिंग्स"
+          }
+        }
+      }
     },
     "Nastavení macOS": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS-Einstellungen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS Settings"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes de macOS"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réglages macOS"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS सेटिंग्स"
+          }
+        }
+      }
     },
     "Nastavení…": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Réglages…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सेटिंग्स…"
+          }
+        }
+      }
     },
     "Nastavit přístup k disku…": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Festplattenzugriff einrichten…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set up disk access…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Configurar el acceso al disco…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Configurer l'accès au disque…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डिस्क एक्सेस सेट करें…"
+          }
+        }
+      }
     },
     "Nastavit úplný přístup k disku…": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vollständigen Festplattenzugriff einrichten…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set up Full Disk Access…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Configurar el acceso total al disco…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Configurer l'accès complet au disque…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पूर्ण डिस्क एक्सेस सेट करें…"
+          }
+        }
+      }
     },
     "Načtení aplikací. Přesun konkrétní aplikace může později vyžadovat správce.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps werden gelistet. Das Bewegen einer bestimmten App kann später einen Administrator erfordern."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listing apps. Moving a particular app may later need an administrator."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargando apps. Mover una app concreta puede requerir un administrador más adelante."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chargement des apps. Déplacer une app donnée pourra nécessiter un administrateur."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऐप्स लोड हो रही हैं। किसी ऐप को हटाने हेतु बाद में व्यवस्थापक की आवश्यकता हो सकती है।"
+          }
+        }
+      }
     },
     "Načíst přihlašovací aplikace": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anmeldeobjekte laden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Load login apps"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargar apps de inicio de sesión"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Charger les apps d'ouverture de session"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "लॉगिन ऐप्स लोड करें"
+          }
+        }
+      }
     },
     "Načítám nainstalované aplikace…": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installierte Apps werden geladen…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading installed apps…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargando apps instaladas…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chargement des apps installées…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इंस्टॉल ऐप्स लोड हो रही हैं…"
+          }
+        }
+      }
     },
     "Načítání…": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wird geladen…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargando…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chargement…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "लोड हो रहा है…"
+          }
+        }
+      }
     },
     "Nebyly nalezeny žádné související soubory.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es wurden keine zugehörigen Dateien gefunden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No related files were found."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontraron archivos relacionados."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun fichier associé n'a été trouvé."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई संबंधित फ़ाइल नहीं मिली।"
+          }
+        }
+      }
     },
     "Neexistuje": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht vorhanden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Does not exist"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No existe"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inexistant"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मौजूद नहीं"
+          }
+        }
+      }
     },
     "Nelze ověřit": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht überprüfbar"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot be verified"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se puede verificar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible à vérifier"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सत्यापित नहीं किया जा सका"
+          }
+        }
+      }
     },
     "Nenalezeno": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht gefunden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not found"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No encontrado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Introuvable"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नहीं मिला"
+          }
+        }
+      }
     },
     "Neopravuje oprávnění disku. Od macOS 10.11 se o systémové soubory stará sám systém.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es repariert keine Volume-Zugriffsrechte. Seit macOS 10.11 kümmert sich das System selbst um seine Dateien."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It does not repair disk permissions. Since macOS 10.11 the system looks after its own files."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No repara los permisos del disco. Desde macOS 10.11 el sistema cuida de sus propios archivos."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il ne répare pas les autorisations du disque. Depuis macOS 10.11, le système gère lui-même ses fichiers."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "यह डिस्क अनुमतियाँ ठीक नहीं करता। macOS 10.11 से सिस्टम अपनी फ़ाइलें स्वयं संभालता है।"
+          }
+        }
+      }
     },
     "Nespouští periodické skripty. Na dnešním macOS už neexistují.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es führt keine periodischen Skripte aus. Im heutigen macOS gibt es sie nicht mehr."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It does not run periodic scripts. They no longer exist on today's macOS."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No ejecuta scripts periódicos. Ya no existen en el macOS actual."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il n'exécute pas les scripts périodiques. Ils n'existent plus sur macOS actuel."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "यह आवधिक स्क्रिप्ट नहीं चलाता। आज के macOS में वे मौजूद ही नहीं हैं।"
+          }
+        }
+      }
     },
     "Neukončuje procesy. Ukáže je; ukončení patří do Monitoru aktivity.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es beendet keine Prozesse. Es zeigt sie an; das Beenden gehört in die Aktivitätsanzeige."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It does not quit processes. It shows them; quitting belongs in Activity Monitor."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No cierra procesos. Los muestra; cerrarlos corresponde al Monitor de Actividad."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il ne quitte pas les processus. Il les affiche ; les quitter relève du Moniteur d'activité."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "यह प्रक्रियाएँ बंद नहीं करता। उन्हें दिखाता है; बंद करना Activity Monitor का काम है।"
+          }
+        }
+      }
     },
     "Neuvolňuje paměť. macOS v ní drží data, aby je nemusel číst z disku; vyprázdnit ji znamená příští čtení zpomalit.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es gibt keinen Speicher frei. macOS hält dort Daten, um nicht von der Festplatte lesen zu müssen; ihn zu leeren macht den nächsten Lesevorgang nur langsamer."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It does not free memory. macOS keeps data there so it need not read from disk; emptying it only makes the next read slower."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No libera memoria. macOS guarda datos allí para no leer del disco; vaciarla solo hace más lenta la siguiente lectura."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il ne libère pas la mémoire. macOS y conserve des données pour éviter de lire le disque ; la vider ne fait que ralentir la lecture suivante."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "यह मेमोरी खाली नहीं करता। macOS उसमें डेटा रखता है ताकि डिस्क से न पढ़ना पड़े; उसे खाली करने से अगली पढ़ाई ही धीमी होती है।"
+          }
+        }
+      }
     },
     "Nevybráno": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht ausgewählt"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not selected"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No seleccionado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non sélectionné"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "चयनित नहीं"
+          }
+        }
+      }
     },
     "Neznámý druh položky: %@": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unbekannte Objektart: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown item kind: %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tipo de elemento desconocido: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Type d'élément inconnu : %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अज्ञात आइटम प्रकार: %@"
+          }
+        }
+      }
     },
     "Neznámý stav": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unbekannter Zustand"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown state"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estado desconocido"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "État inconnu"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अज्ञात स्थिति"
+          }
+        }
+      }
     },
     "Nezávislé softwarové studio": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unabhängiges Software-Studio"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Independent software studio"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudio de software independiente"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Studio logiciel indépendant"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "स्वतंत्र सॉफ़्टवेयर स्टूडियो"
+          }
+        }
+      }
     },
     "Nic nenalezeno": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nichts gefunden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing found"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontró nada"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rien trouvé"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कुछ नहीं मिला"
+          }
+        }
+      }
     },
     "Nic se neodstraní bez vašeho potvrzení.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ohne Ihre Bestätigung wird nichts entfernt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing is removed without your confirmation."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se elimina nada sin tu confirmación."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rien n'est supprimé sans votre confirmation."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपकी पुष्टि के बिना कुछ नहीं हटाया जाता।"
+          }
+        }
+      }
     },
     "Node.js runtime spravovaný přes nvm": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Über nvm verwaltete Node.js-Laufzeit"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Node.js runtime managed by nvm"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entorno de ejecución de Node.js gestionado con nvm"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Runtime Node.js géré par nvm"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nvm द्वारा प्रबंधित Node.js रनटाइम"
+          }
+        }
+      }
     },
     "Některá data se nepodařilo přesunout:\\n%@": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einige Daten konnten nicht bewegt werden:\\n%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Some data could not be moved:\\n%@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron mover algunos datos:\\n%@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Certaines données n'ont pas pu être déplacées :\\n%@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कुछ डेटा नहीं हटाया जा सका:\\n%@"
+          }
+        }
+      }
     },
     "Některé funkce mají omezení nebo jejich přístup nelze ověřit. Můžete pokračovat a oprávnění vyřešit později.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einige Funktionen sind eingeschränkt oder ihr Zugriff lässt sich nicht prüfen. Sie können fortfahren und die Berechtigungen später klären."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Some features are limited or their access cannot be verified. You can continue and sort the permissions out later."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algunas funciones están limitadas o no se puede verificar su acceso. Puede continuar y resolver los permisos más tarde."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Certaines fonctions sont limitées ou leur accès ne peut être vérifié. Vous pouvez continuer et régler les autorisations plus tard."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कुछ सुविधाएँ सीमित हैं या उनकी पहुँच सत्यापित नहीं हो सकी। आप जारी रख सकते हैं और अनुमतियाँ बाद में तय कर सकते हैं।"
+          }
+        }
+      }
     },
     "Některé položky se nepodařilo odstranit:\\n%@": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einige Objekte konnten nicht entfernt werden:\\n%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Some items could not be removed:\\n%@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron eliminar algunos elementos:\\n%@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Certains éléments n'ont pas pu être supprimés :\\n%@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कुछ आइटम नहीं हटाए जा सके:\\n%@"
+          }
+        }
+      }
     },
     "Některé soubory se nepodařilo přesunout:\\n%@": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einige Dateien konnten nicht bewegt werden:\\n%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Some files could not be moved:\\n%@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron mover algunos archivos:\\n%@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Certains fichiers n'ont pas pu être déplacés :\\n%@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कुछ फ़ाइलें नहीं हटाई जा सकीं:\\n%@"
+          }
+        }
+      }
     },
     "Některé zbytky se nepodařilo přesunout:\\n%@": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einige Restdaten konnten nicht bewegt werden:\\n%@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Some leftovers could not be moved:\\n%@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudieron mover algunos restos:\\n%@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Certains résidus n'ont pas pu être déplacés :\\n%@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कुछ अवशेष नहीं हटाए जा सके:\\n%@"
+          }
+        }
+      }
     },
     "O aplikaci Nimbo": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Über Nimbo"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About Nimbo"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acerca de Nimbo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "À propos de Nimbo"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nimbo के बारे में"
+          }
+        }
+      }
     },
     "OK": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ठीक है"
+          }
+        }
+      }
     },
     "Oblasti vyžadující pozornost: %lld. Některé výsledky mohou být neúplné.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bereiche, die Aufmerksamkeit brauchen: %lld. Einige Ergebnisse können unvollständig sein."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Areas needing attention: %lld. Some results may be incomplete."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Áreas que requieren atención: %lld. Algunos resultados pueden estar incompletos."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Domaines nécessitant attention : %lld. Certains résultats peuvent être incomplets."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ध्यान चाहने वाले क्षेत्र: %lld। कुछ परिणाम अधूरे हो सकते हैं।"
+          }
+        }
+      }
     },
     "Obnovit": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktualisieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refresh"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualizar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualiser"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रीफ़्रेश करें"
+          }
+        }
+      }
     },
     "Obnovit aplikace": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps aktualisieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refresh apps"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualizar apps"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualiser les apps"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऐप्स रीफ़्रेश करें"
+          }
+        }
+      }
     },
     "Obnovitelné kroky": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Umkehrbare Schritte"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reversible steps"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasos reversibles"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Étapes réversibles"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "पलटे जा सकने वाले चरण"
+          }
+        }
+      }
     },
     "Obraz systému Android Emulatoru": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android-Emulator-Systemabbild"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android Emulator system image"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imagen de sistema del emulador de Android"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Image système de l'émulateur Android"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android एमुलेटर सिस्टम इमेज"
+          }
+        }
+      }
     },
     "Obsah Koše bude smazán natrvalo. Ostatní vybrané položky se přesunou do Koše.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Inhalt des Papierkorbs wird endgültig gelöscht. Die übrigen ausgewählten Objekte wandern in den Papierkorb."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The contents of the Trash will be deleted permanently. The other selected items go to the Trash."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El contenido de la papelera se eliminará permanentemente. Los demás elementos seleccionados irán a la papelera."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le contenu de la corbeille sera supprimé définitivement. Les autres éléments sélectionnés iront à la corbeille."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ट्रैश की सामग्री स्थायी रूप से मिटेगी। अन्य चयनित आइटम ट्रैश में जाएँगे।"
+          }
+        }
+      }
     },
     "Obsazená paměť sama o sobě není problém: macOS v ní drží data, aby je nemusel číst z disku.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belegter Speicher ist für sich genommen kein Problem: macOS hält dort Daten, um nicht von der Festplatte lesen zu müssen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Used memory is not a problem in itself: macOS keeps data there so it need not read from disk."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La memoria ocupada no es un problema en sí: macOS guarda datos allí para no leer del disco."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La mémoire utilisée n'est pas un problème en soi : macOS y conserve des données pour éviter de lire le disque."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "उपयोग में मेमोरी अपने आप में समस्या नहीं है: macOS उसमें डेटा रखता है ताकि डिस्क से न पढ़ना पड़े।"
+          }
+        }
+      }
     },
     "Odebrat sekci z výběru": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auswahl der Kategorie aufheben"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deselect section"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar la sección de la selección"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Désélectionner la section"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अनुभाग का चयन हटाएँ"
+          }
+        }
+      }
     },
     "Odepření může způsobit ochrana soukromí i oprávnění souborového systému. Nimbo nic nemění automaticky.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Ablehnung kann vom Datenschutz oder von Dateisystemrechten stammen. Nimbo ändert nichts von selbst."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A refusal can come from privacy protection or from filesystem permissions. Nimbo changes nothing on its own."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una denegación puede venir de la protección de privacidad o de los permisos del sistema de archivos. Nimbo no cambia nada por su cuenta."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un refus peut venir de la protection de la vie privée ou des autorisations du système de fichiers. Nimbo ne change rien de lui-même."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अस्वीकृति गोपनीयता सुरक्षा या फ़ाइल-सिस्टम अनुमतियों से आ सकती है। Nimbo स्वयं कुछ नहीं बदलता।"
+          }
+        }
+      }
     },
     "Odinstalace i související data": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deinstallation samt zugehöriger Daten"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uninstalling and related data"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desinstalación y datos relacionados"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Désinstallation et données associées"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अनइंस्टॉल और संबंधित डेटा"
+          }
+        }
+      }
     },
     "Odinstalovat": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deinstallieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uninstall"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desinstalar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Désinstaller"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अनइंस्टॉल करें"
+          }
+        }
+      }
     },
     "Odinstalovat %@?": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ deinstallieren?"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uninstall %@?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Desinstalar %@?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Désinstaller %@ ?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ अनइंस्टॉल करें?"
+          }
+        }
+      }
     },
     "Odinstalujte aplikace spolu s jejich cache a nastavením.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deinstallieren Sie Apps samt ihren Caches und Einstellungen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uninstall apps together with their caches and settings."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desinstala apps junto con sus cachés y ajustes."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Désinstallez les apps avec leurs caches et réglages."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऐप्स को उनके कैश और सेटिंग्स सहित अनइंस्टॉल करें।"
+          }
+        }
+      }
     },
     "Odkládací soubor": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auslagerungsdatei"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swap file"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archivo de intercambio"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fichier d'échange"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "स्वैप फ़ाइल"
+          }
+        }
+      }
     },
     "Odkládá se málo, paměť stačí.": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es wird wenig ausgelagert, der Speicher reicht."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Little is being swapped; memory is sufficient."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se intercambia poco; la memoria es suficiente."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peu de données sont échangées ; la mémoire suffit."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "स्वैप कम हो रहा है; मेमोरी पर्याप्त है।"
+          }
+        }
+      }
     },
     "Odstranit vývojářská data?": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entwicklerdaten entfernen?"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove developer data?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar los datos de desarrollo?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supprimer les données de développement ?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डेवलपर डेटा हटाएँ?"
+          }
+        }
+      }
     },
     "Offline skenování": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offline-Prüfung"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offline scanning"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Análisis sin conexión"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Analyse hors ligne"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऑफ़लाइन स्कैनिंग"
+          }
+        }
+      }
     },
     "Omezený přístup": {
       "extractionState": "manual",
-      "localizations": {}
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eingeschränkter Zugriff"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limited access"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acceso limitado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accès limité"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सीमित पहुँच"
+          }
+        }
+      }
     },
     "Osobní složky": {
       "extractionState": "manual",
